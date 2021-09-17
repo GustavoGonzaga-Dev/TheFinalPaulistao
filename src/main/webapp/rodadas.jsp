@@ -4,13 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Index</title>
-<link rel="stylesheet" href="Styles/indexStyles.css">
+<title>Rodadas</title>
 </head>
 <body>
-	<div>
-		<h1 >Projeto Paulistão</h1>
+	<h1 align="center">Visualiza Rodadas</h1>
 		<jsp:include page="menu.jsp"></jsp:include>	
-	</div>
 </body>
 </html>

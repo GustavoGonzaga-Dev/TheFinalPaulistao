@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+body{
+	margin:0;
+	box-sizing: border-box;
+	font-family:Helvetica;
+}
+
+nav{
+	background-color: #333;
+	overflow:hidden;
+	width: 100%;
+}
+
+nav .menu{
+	color: #fff;
+	float: left;
+	display:flex;
+	padding: 14px 16px;
+}
+
+nav a{
+	font-size: 20px;
+	color: #fff;
+	float: right;
+	text-decoration: none;
+	display:flex;
+	padding: 14px 16px;
+}
+
+nav a:hover{
+	transition: 0.5s;
+	background-color: #e4e4e4;
+	color:#333;
+}

@@ -4,13 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Index</title>
-<link rel="stylesheet" href="Styles/indexStyles.css">
+<title>Tabela de Times</title>
 </head>
 <body>
-	<div>
-		<h1 >Projeto Paulistão</h1>
-		<jsp:include page="menu.jsp"></jsp:include>	
-	</div>
+	<h1 align="center">Times</h1>
+			<jsp:include page="menu.jsp"></jsp:include>	
 </body>
 </html>

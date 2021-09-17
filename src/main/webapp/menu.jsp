@@ -5,15 +5,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Menu</title>
+<link rel="stylesheet" href="Styles/menuStyles.css">
 </head>
 <body>
-	<div align="center">
-		<table border="1">
-			<tr>
-				<td><a href="index.jsp">Index</a></td>
-				<td><a href="grupos.jsp">Grupos</a></td>
-			</tr>			
-		</table>
-	</div>
+ 	<nav>
+ 		<div class="menu">Menu</div>
+   		<a href="rodadas.jsp">Rodadas</a>		
+  		<a href="times.jsp">Times</a>		
+ 		<a href="grupos.jsp">Gerar Grupos</a>
+ 		<a href="index.jsp">Inicio</a>
+ 	</nav>
 </body>
 </html>
