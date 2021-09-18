@@ -9,65 +9,82 @@
 
 </head>
 <body>
-		<h1 >Gerar Grupos</h1>
+	<div>
+		<h1 >Grupos</h1>
 
 		<jsp:include page="menu.jsp"></jsp:include>			
+	</div>
+	
 
 	
-	<div class="grupo" >
-		<form action="Grupo" method="post">
-			<input type="submit" value="Gerar Grupos" id="button" name="button" onclick="cadastro()" >
-			<script >function cadastro(){alert('Me apertaram aqui em!')}</script>
-		</form>
-	</div>	
-	
 	<div class= "Container">
-		<div><h2>TABELA DE GRUPOS</h2></div>
-		<div class="Tabela" >
-			<table >
-				<tr>
-					<td class="GRUPO">GRUPO A</td>
-					<td>São Paulo</td>
-					<td>2</td>
-					<td>3</td>
-					<td>4</td>
-				</tr>
-			</table>
+		<div>
+			<h2>TABELA DE GRUPOS</h2>
 		</div>
-		<div class="Tabela">
-			<table >
-				<tr>
-					<td class="GRUPO">GRUPO B</td>
+
+		<div>
+			<table border = 1>
+				<tr >
+					<th colspan="4">Grupo A</th>
+				</tr>
+				<tr>	
 					<td>Corinthians</td>
-					<td>6</td>
-					<td>7</td>
-					<td>8</td>
+					<td>Botafogo-SP</td>
+					<td>Bragantino</td>
+					<td>Ferroviária</td>
 				</tr>
 			</table>
 		</div>
-		<div class="Tabela">
-			<table >
+		
+		<br>
+		
+		<div>
+			<table border = 1>
 				<tr>
-					<td class="GRUPO">GRUPO C</td>
+					<th colspan="4">Grupo B</th>
+				</tr>
+				<tr>	
 					<td>Santos</td>
-					<td>10</td>
-					<td>11</td>
-					<td>12</td>
+					<td>Guarani</td>
+					<td>Ituano</td>
+					<td>Mirassol</td>
 				</tr>
 			</table>
 		</div>
-		<div class="Tabela">
-			<table >
+
+		<br>
+
+		<div>
+			<table border = 1>
 				<tr>
-					<td class="GRUPO">GRUPO D</td>
+					<th colspan="4">Grupo C</th>
+				</tr>	
+				<tr>
 					<td>Palmeiras</td>
-					<td>14</td>
-					<td>15</td>
-					<td>16</td>
+					<td>Novorizontino</td>
+					<td>Oeste</td>
+					<td>Ponte Preta</td>
 				</tr>
 			</table>
 		</div>
-	</div>
+	
+		<br>
+	
+		<div>
+			<table border = 1>
+				<tr>
+					<th colspan="4">Grupo D</th>
+				</tr>
+				<tr>	
+					<td>São Paulo</td>
+					<td>Red Bull Brasil</td>
+					<td>São Bento</td>
+					<td>São Caetano</td>
+				</tr>
+			</table>
+		</div>
+		
+    </div>
 
 </body>
 </html>

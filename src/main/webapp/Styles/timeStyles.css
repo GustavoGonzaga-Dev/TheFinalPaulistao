@@ -1,15 +1,5 @@
 @charset "ISO-8859-1";
 
-body{	
-	box-sizing: border-box;
-	font-family:Helvetica;	
-}
-
-
-h1{
-	text-align:center;
-}
-
 footer{
     text-align: center;
     background-color: black;

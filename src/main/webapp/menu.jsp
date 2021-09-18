@@ -12,8 +12,9 @@
  		<div class="menu">Menu</div>
    		<a href="rodadas.jsp">Rodadas</a>		
   		<a href="times.jsp">Times</a>		
- 		<a href="grupos.jsp">Gerar Grupos</a>
+ 		<a href="grupos.jsp">Grupos</a>
+ 		<a href="gerar.jsp">Gerar</a>
  		<a href="index.jsp">Inicio</a>
- 	</nav>
+	</nav>
 </body>
 </html>

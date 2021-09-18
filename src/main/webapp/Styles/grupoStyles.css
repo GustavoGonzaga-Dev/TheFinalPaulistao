@@ -10,6 +10,7 @@ h1{
 	text-align:center;
 }
 
+
 .grupo{
 	text-align:center;
 	background-color:GREY;
@@ -25,37 +26,12 @@ input{
 }
 
 
-.Container{
-	width:900px;
-	
-	font-size:20px;
-	align-items: center;
-	text-align:center;
-	margin:auto;
-}
-
-.Tabela{
-	width: 90%;
-	display:flex;
-	background: #00FFFF;
-	border-radius: 20px;
-	margin-top:10%;
-	float: left;
-	margin: 8px;
-	padding: 70px;
-}
-
-table{
-	align-items:center;
-	display:flex;
-}
-
-.GRUPO{
-	width:200px;
-	display:flex;
-}
-
-td{
-	width:200px;
-
+footer{
+	clear: both;
+    text-align: center;
+    background-color: black;
+    color: #FFFFFF;	
+    position:absolute;
+    bottom: 0px;
+    width: 100%;
 }

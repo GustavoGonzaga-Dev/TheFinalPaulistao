@@ -8,9 +8,17 @@
 <link rel="stylesheet" href="Styles/indexStyles.css">
 </head>
 <body>
-	<div>
-		<h1 >Projeto Paulistão</h1>
-		<jsp:include page="menu.jsp"></jsp:include>	
-	</div>
+
+	<h1 >Projeto Paulistão</h1>
+	<jsp:include page="menu.jsp"></jsp:include>	
+
+ 	
+ 	<footer>
+  	    <p>Desenvolvido por Diego Koga</p>
+    	<p>e</p>
+    	<p>Gustavo Gonzaga</p>
+   	</footer>
+
+
 </body>
 </html>

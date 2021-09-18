@@ -9,7 +9,7 @@ body{
 nav{
 	background-color: #333;
 	overflow:hidden;
-	width: 100%;
+
 }
 
 nav .menu{
@@ -27,6 +27,7 @@ nav a{
 	display:flex;
 	padding: 14px 16px;
 }
+
 
 nav a:hover{
 	transition: 0.5s;
