@@ -17,6 +17,7 @@
 		<form action="Grupo" method="post">
 			<input type="submit" value="Gerar Grupos" id="button" name="button" onclick="cadastro()" >
 			<script >function cadastro(){alert('Os grupos foram gerados!')}</script>
+			<a href="grupos.jsp"></a>
 		</form>
 	</div>	
 		<br>
