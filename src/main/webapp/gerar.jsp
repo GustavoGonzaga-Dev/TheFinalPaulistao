@@ -14,22 +14,22 @@
 	</div>
 			<br>
 	<div class="grupo" >
-		<form action="Grupo" method="post">
+		<form action="Gerar" method="post">
 			<input type="submit" value="Gerar Grupos" id="button" name="button" onclick="cadastro()" >
-			<script >function cadastro(){alert('Os grupos foram gerados!')}</script>
+			<script >function cadastroG(){alert('Os grupos foram gerados!')}</script>
 			<a href="grupos.jsp"></a>
 		</form>
 	</div>	
 		<br>
 	<div class="jogos" >
-		<form action="Jogos" method="post">
+		<form action="Gerar" method="post">
 			<input type="submit" value="Gerar Jogos" id="button" name="button" onclick="cadastro()" >
-			<script >function cadastro(){alert('Os Jogos foram gerados!')}</script>
+			<script >function cadastroJ(){alert('Os Jogos foram gerados!')}</script>
 		</form>
 	</div>		
 		<br>	
 	<div class="rodada" >
-		<form action="Rodada" method="post">
+		<form action="Gerar" method="post">
 			<input type="submit" value="Gerar Rodadas" id="button" name="button" onclick="cadastro()" >
 			<script >function cadastro(){alert('As rodadas foram geradas!')}</script>
 		</form>
