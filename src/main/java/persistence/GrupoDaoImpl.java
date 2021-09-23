@@ -31,21 +31,11 @@ public class GrupoDaoImpl implements IGrupoDao{
         CallableStatement cs = c.prepareCall(sql);
         cs.setInt(1, 1);
         //cs.registerOutParameter(2, Types.VARCHAR);
-         cs.execute();
-
-        
+        cs.execute();
         cs.close();
         
-        String sqlPQ = "SELECT * FROM Grupos";
-       
-        
-        PreparedStatement ps = c.prepareStatement(sqlPQ);
-		ResultSet rs = ps.executeQuery();
-		String saida = null ;
-		int aa = 0;
-		aa = rs.getInt("CodigoTime1");
-		
-        System.out.println("" + aa);
+        String saida = "Chamou aqui";
+        System.out.println(saida);
         return saida;
 	}
 
