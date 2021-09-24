@@ -11,15 +11,15 @@ import java.util.List;
 import model.Grupo;
 
 public class GrupoDaoImpl implements IGrupoDao{
-//sp_geraGrupoTESTE (@A INT)
+	//sp_geraGrupoTESTE (@A INT)
 	private Connection c;
-	
+
 	public Connection GrupoDaoImpll () throws ClassNotFoundException, SQLException {
 		GenericDao gDao = new GenericDao();
 		c = gDao.getConnection();
 		return c;
 	}
-	
+
 	@Override
 	public String gerarGrupos() throws SQLException {
 		try {
@@ -27,36 +27,37 @@ public class GrupoDaoImpl implements IGrupoDao{
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-        String sql = "{CALL sp_geraGrupoTESTE(?)}";
-        CallableStatement cs = c.prepareCall(sql);
-        cs.setInt(1, 1);
-        //cs.registerOutParameter(2, Types.VARCHAR);
-        cs.execute();
-        cs.close();
-        
-        String saida = "Chamou aqui";
-        System.out.println(saida);
-        return saida;
+		String sql = "{CALL sp_geraGrupoTESTE(?)}";
+		CallableStatement cs = c.prepareCall(sql);
+		cs.setInt(1, 1);
+		//cs.registerOutParameter(2, Types.VARCHAR);
+		cs.execute();
+		cs.close();
+
+		String saida = "Chamou aqui";
+		System.out.println(saida);
+		return saida;
 	}
 
 	@Override
-	public List<Grupo> selectGrupo() throws SQLException {
-		List<Grupo> listaGrupo = new ArrayList<Grupo>();
-		StringBuffer sql = new StringBuffer();
-		sql.append("SELECT t.CodigoTime AS Codigo, ");
-		sql.append(" t.NomeTime AS Times ");
-		sql.append("FROM Times t, Grupos g ");
-		sql.append("WHERE t.CodigoTime = g.CodigoTime1 ");
-		
-		PreparedStatement ps = c.prepareStatement(sql.toString());
+	public Grupo selectGrupo(Grupo gp) throws SQLException {
+		//List<Grupo> listaGrupo = new ArrayList<Grupo>();
+		String sql = "SELECT codigotime1, codigotime2, codigotime3, codigotime4 FROM grupos WHERE nomegrupo = ?";
+		//sql.append(" t.NomeTime AS Times ");
+		//sql.append("FROM Times t, Grupos g ");
+		//sql.append("WHERE t.CodigoTime = g.CodigoTime1 ");
+
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setString(1, gp.getNomeGrupo());
 		ResultSet rs = ps.executeQuery();
-		while(rs.next()) {
-			Grupo gru = new Grupo();
-			gru.setCodigoTime1(rs.getInt("Codigo"));
-			gru.setNomeGrupo(rs.getString("Times"));
+		if (rs.next()) {
+			gp.setCodigoTime1(rs.getInt("codigotime1"));
+			gp.setCodigoTime2(rs.getInt("codigotime2"));
+			gp.setCodigoTime3(rs.getInt("codigotime3"));
+			gp.setCodigoTime4(rs.getInt("codigotime4"));
 		}
 		rs.close();
 		ps.close();
-		return listaGrupo;
+		return gp;
 	}
 }
