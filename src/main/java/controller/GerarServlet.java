@@ -319,7 +319,7 @@ public class GerarServlet extends HttpServlet {
 					e.printStackTrace();
 				}
 			}
-			if(validar = true) {
+			if(validar == true) {
 				InserirJogosNaTabela(jogo);
 				codJogo++;
 			}else{
