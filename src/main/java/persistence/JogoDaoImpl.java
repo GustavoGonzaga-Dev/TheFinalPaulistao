@@ -40,4 +40,22 @@ public class JogoDaoImpl implements IJogoDao {
 
 	}
 
+	@Override
+	public boolean validaRodada(Jogo jogo) throws SQLException {
+		try {
+			c = JogoDaoImpll();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		String sql = "{CALL sp_validaJogo(?,?)}";
+		CallableStatement cs = c.prepareCall(sql);
+		cs.setInt(1, jogo.getCodigoTimeA());
+		cs.setInt(2, jogo.getCodigoTimeB());
+
+		cs.execute();
+		cs.close();
+
+		return true;
+	}
+
 }
