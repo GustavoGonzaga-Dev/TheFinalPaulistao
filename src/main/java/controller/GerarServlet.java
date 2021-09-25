@@ -29,6 +29,7 @@ public class GerarServlet extends HttpServlet {
 	private Grupo gpC = new Grupo();
 	private Grupo gpD = new Grupo();
 	private int codRodada = 1;
+	private int codJogo = 1;
 
 	private IJogoDao ijg;
 	
@@ -109,7 +110,7 @@ public class GerarServlet extends HttpServlet {
 		Random random = new Random();
 		int rGrupo;
 		int rTime;
-		int codJogo = 1;
+		
 		
 		for(int i = 0; i<8; i++) {
 			jogo.setCodigoJogo(codJogo);
@@ -266,12 +267,10 @@ public class GerarServlet extends HttpServlet {
 				}//end switch
 			}//end for
 			jogo.setCodRodada(codRodada);
-			//System.out.println("codigo jogo:" + jogo.getCodigoJogo() +", TimeA:" +jogo.getCodigoTimeA() +", TimeB:"+ jogo.getCodigoTimeB()+ ", Rodada:"+ jogo.getCodRodada());;
+
 			switch(jogo.getCodRodada()) {
 			case 1:
 				jogo.setDataJogo("01-09-2021");
-				
-				System.out.println("entrou aqui na data"+ jogo.getDataJogo());
 			break;
 			case 2:
 				jogo.setDataJogo("05-09-2021");
