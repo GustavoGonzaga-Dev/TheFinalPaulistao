@@ -41,13 +41,15 @@ public class GrupoDaoImpl implements IGrupoDao{
 
 	@Override
 	public Grupo selectGrupo(Grupo gp) throws SQLException {
-		//List<Grupo> listaGrupo = new ArrayList<Grupo>();
+		try {
+			c = GrupoDaoImpll();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 		String sql = "SELECT codigotime1, codigotime2, codigotime3, codigotime4 FROM grupos WHERE nomegrupo = ?";
-		//sql.append(" t.NomeTime AS Times ");
-		//sql.append("FROM Times t, Grupos g ");
-		//sql.append("WHERE t.CodigoTime = g.CodigoTime1 ");
-
 		PreparedStatement ps = c.prepareStatement(sql);
+		System.out.println("passou dessa merda de linha");
+		
 		ps.setString(1, gp.getNomeGrupo());
 		ResultSet rs = ps.executeQuery();
 		if (rs.next()) {
