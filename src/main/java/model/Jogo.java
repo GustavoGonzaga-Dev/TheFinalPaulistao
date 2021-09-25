@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Date;
-
 public class Jogo {
 	
 	private Integer CodigoJogo;
@@ -9,7 +7,7 @@ public class Jogo {
     private Integer CodigoTimeB;
     private Integer GolsTimeA;
     private Integer GolsTImeB;
-    private Date DataJogo;
+    private String DataJogo;
     private Integer CodRodada;
     
 	public Integer getCodigoJogo() {
@@ -42,10 +40,10 @@ public class Jogo {
 	public void setGolsTImeB(Integer golsTImeB) {
 		GolsTImeB = golsTImeB;
 	}
-	public Date getDataJogo() {
+	public String getDataJogo() {
 		return DataJogo;
 	}
-	public void setDataJogo(Date dataJogo) {
+	public void setDataJogo(String dataJogo) {
 		DataJogo = dataJogo;
 	}
 	public Integer getCodRodada() {

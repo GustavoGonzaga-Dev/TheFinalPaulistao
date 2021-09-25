@@ -109,6 +109,7 @@ public class GerarServlet extends HttpServlet {
 		int rGrupo;
 		int rTime;
 		int codJogo = 1;
+		int contador;
 		
 		for(int i = 0; i<8; i++) {
 			jogo.setCodigoJogo(codJogo);
@@ -265,6 +266,7 @@ public class GerarServlet extends HttpServlet {
 			}//end for
 			jogo.setCodRodada(codRodada);
 			System.out.println("codigo jogo:" + jogo.getCodigoJogo() +", TimeA:" +jogo.getCodigoTimeA() +", TimeB:"+ jogo.getCodigoTimeB()+ ", Rodada:"+ jogo.getCodRodada());;
+			//chama o metodo das datas
 			//chamar a procedure
 			InserirJogosNaTabela();
 			codJogo++;
