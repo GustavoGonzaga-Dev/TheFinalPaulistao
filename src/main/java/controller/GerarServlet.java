@@ -17,6 +17,7 @@ import model.Grupo;
 import model.Jogo;
 import persistence.GrupoDaoImpl;
 import persistence.IGrupoDao;
+import persistence.IJogoDao;
 
 @WebServlet("/Gerar")
 public class GerarServlet extends HttpServlet {
@@ -28,6 +29,9 @@ public class GerarServlet extends HttpServlet {
 	private Grupo gpD = new Grupo();
 	private int codRodada = 1;
 
+	private IJogoDao ijg;
+	
+	
 	public GerarServlet() {
 		igp = new GrupoDaoImpl();
 	}
@@ -57,6 +61,15 @@ public class GerarServlet extends HttpServlet {
 		}
 	}
 
+	public void InserirJogosNaTabela() {
+		try {
+			ijg.insereJogos();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public void EnxerTabGrupo() {
 		try {
 			igp.gerarGrupos();
@@ -253,6 +266,7 @@ public class GerarServlet extends HttpServlet {
 			jogo.setCodRodada(codRodada);
 			System.out.println("codigo jogo:" + jogo.getCodigoJogo() +", TimeA:" +jogo.getCodigoTimeA() +", TimeB:"+ jogo.getCodigoTimeB()+ ", Rodada:"+ jogo.getCodRodada());;
 			//chamar a procedure
+			InserirJogosNaTabela();
 			codJogo++;
 		}//end for
 		codRodada++;
