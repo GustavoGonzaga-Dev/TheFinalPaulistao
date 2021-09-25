@@ -61,9 +61,9 @@ public class GerarServlet extends HttpServlet {
 		}
 	}
 
-	public void InserirJogosNaTabela() {
+	public void InserirJogosNaTabela(Jogo jogo) {
 		try {
-			ijg.insereJogos();
+			ijg.insereJogos(jogo);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -109,7 +109,6 @@ public class GerarServlet extends HttpServlet {
 		int rGrupo;
 		int rTime;
 		int codJogo = 1;
-		int contador;
 		
 		for(int i = 0; i<8; i++) {
 			jogo.setCodigoJogo(codJogo);
@@ -266,9 +265,47 @@ public class GerarServlet extends HttpServlet {
 			}//end for
 			jogo.setCodRodada(codRodada);
 			System.out.println("codigo jogo:" + jogo.getCodigoJogo() +", TimeA:" +jogo.getCodigoTimeA() +", TimeB:"+ jogo.getCodigoTimeB()+ ", Rodada:"+ jogo.getCodRodada());;
+			switch(codRodada) {
+			case 1:
+				jogo.setDataJogo("01/09/2021");
+			break;
+			case 2:
+				jogo.setDataJogo("05/09/2021");
+			break;
+			case 3:
+				jogo.setDataJogo("08/09/2021");
+			break;
+			case 4:
+				jogo.setDataJogo("12/09/2021");
+			break;
+			case 5:
+				jogo.setDataJogo("15/09/2021");
+			break;
+			case 6:
+				jogo.setDataJogo("19/09/2021");
+			break;
+			case 7:
+				jogo.setDataJogo("22/09/2021");
+			break;
+			case 8:
+				jogo.setDataJogo("26/09/2021");
+			break;
+			case 9:
+				jogo.setDataJogo("29/09/2021");
+			break;
+			case 10:
+				jogo.setDataJogo("03/10/2021");
+			break;
+			case 11:
+				jogo.setDataJogo("06/10/2021");
+			break;
+			case 12:
+				jogo.setDataJogo("10/10/2021");
+			break;
+			}			
 			//chama o metodo das datas
 			//chamar a procedure
-			InserirJogosNaTabela();
+			InserirJogosNaTabela(jogo);
 			codJogo++;
 		}//end for
 		codRodada++;
