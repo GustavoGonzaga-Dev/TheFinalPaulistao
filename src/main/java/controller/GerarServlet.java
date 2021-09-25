@@ -305,11 +305,18 @@ public class GerarServlet extends HttpServlet {
 			case 12:
 				jogo.setDataJogo("10-10-2021");
 			break;
-			}			
-			//chama o metodo das datas
-			//chamar a procedure
-			InserirJogosNaTabela(jogo);
-			codJogo++;
+			}	
+			boolean validar = true;
+			if(jogo.getCodRodada() != 1) {
+				
+				//validar = [chamar a procedure]
+			}
+			if(validar = true) {
+				InserirJogosNaTabela(jogo);
+				codJogo++;
+			}else{
+				i--;
+			}
 		}//end for
 		codRodada++;
 	}
