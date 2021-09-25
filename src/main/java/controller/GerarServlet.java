@@ -95,12 +95,12 @@ public class GerarServlet extends HttpServlet {
 		Random random = new Random();
 		int rGrupo;
 		int rTime;
-		//boolean Gfoi = false;
-		//int ct = 1;
 		int codJogo = 1;
 		
 		for(int i = 0; i<8; i++) {
 			jogo.setCodigoJogo(codJogo);
+			jogo.setCodigoTimeA(null);
+			jogo.setCodigoTimeB(null);
 			for(int ct = 1; ct<3; ct++) {
 				rGrupo = random.nextInt(4)+1;
 				switch (rGrupo) {
@@ -110,8 +110,6 @@ public class GerarServlet extends HttpServlet {
 						if(rTime  == 1 && gpA.getCodigoTime1() != null) {
 							jogo.setCodigoTimeA(gpA.getCodigoTime1());
 							gpA.setCodigoTime1(null);
-							
-							System.out.println("o numero dessa merda agora é: "+ gpA.getCodigoTime1());
 						}else if(rTime  == 2 && gpA.getCodigoTime2() != null) {
 							jogo.setCodigoTimeA(gpA.getCodigoTime2());
 							gpA.setCodigoTime2(null);
@@ -121,6 +119,8 @@ public class GerarServlet extends HttpServlet {
 						}else if(rTime  == 4 && gpA.getCodigoTime4() != null) {
 							jogo.setCodigoTimeA(gpA.getCodigoTime4());
 							gpA.setCodigoTime4(null);
+						}else {
+							ct--;
 						}
 					}else if(ct == 2) {
 						if(rTime  == 1 && gpA.getCodigoTime1() != null) {
@@ -135,6 +135,8 @@ public class GerarServlet extends HttpServlet {
 						}else if(rTime  == 4 && gpA.getCodigoTime4() != null) {
 							jogo.setCodigoTimeB(gpA.getCodigoTime4());
 							gpA.setCodigoTime4(null);
+						}else {
+							ct--;
 						}
 					}
 					break;
@@ -153,6 +155,8 @@ public class GerarServlet extends HttpServlet {
 						}else if(rTime  == 4 && gpB.getCodigoTime4() != null) {
 							jogo.setCodigoTimeA(gpB.getCodigoTime4());
 							gpB.setCodigoTime4(null);
+						}else {
+							ct--;
 						}
 					}else if(ct == 2) {
 						if(rTime  == 1 && gpB.getCodigoTime1() != null) {
@@ -167,6 +171,8 @@ public class GerarServlet extends HttpServlet {
 						}else if(rTime  == 4 && gpB.getCodigoTime4() != null) {
 							jogo.setCodigoTimeB(gpB.getCodigoTime4());
 							gpB.setCodigoTime4(null);
+						}else {
+							ct--;
 						}
 					}
 					break;
@@ -185,6 +191,8 @@ public class GerarServlet extends HttpServlet {
 						}else if(rTime  == 4 && gpC.getCodigoTime4() != null) {
 							jogo.setCodigoTimeA(gpC.getCodigoTime4());
 							gpC.setCodigoTime4(null);
+						}else {
+							ct--;
 						}
 					}else if(ct == 2) {
 						if(rTime  == 1 && gpC.getCodigoTime1() != null) {
@@ -199,6 +207,8 @@ public class GerarServlet extends HttpServlet {
 						}else if(rTime  == 4 && gpC.getCodigoTime4() != null) {
 							jogo.setCodigoTimeB(gpC.getCodigoTime4());
 							gpC.setCodigoTime4(null);
+						}else {
+							ct--;
 						}
 					}
 					break;
@@ -217,6 +227,8 @@ public class GerarServlet extends HttpServlet {
 						}else if(rTime  == 4 && gpD.getCodigoTime4() != null) {
 							jogo.setCodigoTimeA(gpD.getCodigoTime4());
 							gpD.setCodigoTime4(null);
+						}else {
+							ct--;
 						}
 					}else if(ct == 2) {
 						if(rTime  == 1 && gpD.getCodigoTime1() != null) {
@@ -231,12 +243,13 @@ public class GerarServlet extends HttpServlet {
 						}else if(rTime  == 4 && gpD.getCodigoTime4() != null) {
 							jogo.setCodigoTimeB(gpD.getCodigoTime4());
 							gpD.setCodigoTime4(null);
+						}else {
+							ct--;
 						}
 					}
 					break;
 				}//end switch
 			}//end for
-			//ct = 1;
 			jogo.setCodRodada(codRodada);
 			System.out.println("codigo jogo:" + jogo.getCodigoJogo() +", TimeA:" +jogo.getCodigoTimeA() +", TimeB:"+ jogo.getCodigoTimeB()+ ", Rodada:"+ jogo.getCodRodada());;
 			//chamar a procedure
