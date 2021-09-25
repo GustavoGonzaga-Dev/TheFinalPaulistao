@@ -18,6 +18,7 @@ import model.Jogo;
 import persistence.GrupoDaoImpl;
 import persistence.IGrupoDao;
 import persistence.IJogoDao;
+import persistence.JogoDaoImpl;
 
 @WebServlet("/Gerar")
 public class GerarServlet extends HttpServlet {
@@ -34,11 +35,11 @@ public class GerarServlet extends HttpServlet {
 	
 	public GerarServlet() {
 		igp = new GrupoDaoImpl();
+		ijg = new JogoDaoImpl();
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String cmd = request.getParameter("button");
-		//System.out.println("Japa otario" + cmd);
 		switch (cmd){
 		case "Gerar Grupos":
 			EnxerTabGrupo();
@@ -114,6 +115,7 @@ public class GerarServlet extends HttpServlet {
 			jogo.setCodigoJogo(codJogo);
 			jogo.setCodigoTimeA(null);
 			jogo.setCodigoTimeB(null);
+			jogo.setDataJogo(null);
 			for(int ct = 1; ct<3; ct++) {
 				rGrupo = random.nextInt(4)+1;
 				switch (rGrupo) {
@@ -264,43 +266,45 @@ public class GerarServlet extends HttpServlet {
 				}//end switch
 			}//end for
 			jogo.setCodRodada(codRodada);
-			System.out.println("codigo jogo:" + jogo.getCodigoJogo() +", TimeA:" +jogo.getCodigoTimeA() +", TimeB:"+ jogo.getCodigoTimeB()+ ", Rodada:"+ jogo.getCodRodada());;
-			switch(codRodada) {
+			//System.out.println("codigo jogo:" + jogo.getCodigoJogo() +", TimeA:" +jogo.getCodigoTimeA() +", TimeB:"+ jogo.getCodigoTimeB()+ ", Rodada:"+ jogo.getCodRodada());;
+			switch(jogo.getCodRodada()) {
 			case 1:
-				jogo.setDataJogo("01/09/2021");
+				jogo.setDataJogo("01-09-2021");
+				
+				System.out.println("entrou aqui na data"+ jogo.getDataJogo());
 			break;
 			case 2:
-				jogo.setDataJogo("05/09/2021");
+				jogo.setDataJogo("05-09-2021");
 			break;
 			case 3:
-				jogo.setDataJogo("08/09/2021");
+				jogo.setDataJogo("08-09-2021");
 			break;
 			case 4:
-				jogo.setDataJogo("12/09/2021");
+				jogo.setDataJogo("12-09-2021");
 			break;
 			case 5:
-				jogo.setDataJogo("15/09/2021");
+				jogo.setDataJogo("15-09-2021");
 			break;
 			case 6:
-				jogo.setDataJogo("19/09/2021");
+				jogo.setDataJogo("19-09-2021");
 			break;
 			case 7:
-				jogo.setDataJogo("22/09/2021");
+				jogo.setDataJogo("22-09-2021");
 			break;
 			case 8:
-				jogo.setDataJogo("26/09/2021");
+				jogo.setDataJogo("26-09-2021");
 			break;
 			case 9:
-				jogo.setDataJogo("29/09/2021");
+				jogo.setDataJogo("29-09-2021");
 			break;
 			case 10:
-				jogo.setDataJogo("03/10/2021");
+				jogo.setDataJogo("03-10-2021");
 			break;
 			case 11:
-				jogo.setDataJogo("06/10/2021");
+				jogo.setDataJogo("06-10-2021");
 			break;
 			case 12:
-				jogo.setDataJogo("10/10/2021");
+				jogo.setDataJogo("10-10-2021");
 			break;
 			}			
 			//chama o metodo das datas

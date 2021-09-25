@@ -35,7 +35,7 @@ public class JogoDaoImpl implements IJogoDao {
 		cs.close();
 
 		String saida = "Chamou aqui";
-		System.out.println(saida);
+		//System.out.println(saida);
 		return saida;
 
 	}
