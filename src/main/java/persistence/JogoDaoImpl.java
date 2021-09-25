@@ -3,6 +3,7 @@ package persistence;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Types;
 
 import model.Jogo;
 
@@ -47,14 +48,17 @@ public class JogoDaoImpl implements IJogoDao {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		String sql = "{CALL sp_validaJogo(?,?)}";
+		String sql = "{CALL sp_confereJogo(?,?,?)}";
 		CallableStatement cs = c.prepareCall(sql);
 		cs.setInt(1, jogo.getCodigoTimeA());
 		cs.setInt(2, jogo.getCodigoTimeB());
-
+		cs.registerOutParameter(3, Types.INTEGER);
 		cs.execute();
+		int saida = cs.getInt(3);
 		cs.close();
-
+		if(saida!= 0){
+			return false;
+		}
 		return true;
 	}
 

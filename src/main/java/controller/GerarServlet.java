@@ -63,15 +63,7 @@ public class GerarServlet extends HttpServlet {
 		}
 	}
 	
-	public boolean ValidaRodadas(Jogo jogo) {
-		try {
-			ijg.validaRodada(jogo);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
-	}
+
 	
 	public void InserirJogosNaTabela(Jogo jogo) {
 		try {
@@ -320,7 +312,12 @@ public class GerarServlet extends HttpServlet {
 			if(jogo.getCodRodada() != 1) {
 				
 				//validar = [chamar a procedure]
-				validar = ValidaRodadas(jogo);
+				try {
+					validar = ijg.validaRodada(jogo);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			if(validar = true) {
 				InserirJogosNaTabela(jogo);

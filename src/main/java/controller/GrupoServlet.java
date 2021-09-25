@@ -23,11 +23,13 @@ public class GrupoServlet extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//try {
-		//igp.gerarGrupos();
-			//} catch (SQLException e) {
-		//e.printStackTrace();
-		//}
+		/*try {
+			igp.selectGrupo();
+		}catch(SQLException e){
+			
+		}*/
+		
+		
 		System.out.println("Japa otario");
 		
 	}
