@@ -32,8 +32,8 @@ public class GerarServlet extends HttpServlet {
 	private int codJogo = 1;
 
 	private IJogoDao ijg;
-	
-	
+
+
 	public GerarServlet() {
 		igp = new GrupoDaoImpl();
 		ijg = new JogoDaoImpl();
@@ -62,9 +62,9 @@ public class GerarServlet extends HttpServlet {
 
 		}
 	}
-	
 
-	
+
+
 	public void InserirJogosNaTabela(Jogo jogo) {
 		try {
 			ijg.insereJogos(jogo);
@@ -73,7 +73,7 @@ public class GerarServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void EnxerTabGrupo() {
 		try {
 			igp.gerarGrupos();
@@ -108,225 +108,521 @@ public class GerarServlet extends HttpServlet {
 		if(gpA.getCodigoTime1() == null) {
 			encherVariaveis();
 		}
-		Jogo jogo = new Jogo();
-		Random random = new Random();
-		int rGrupo;
-		int rTime;
-		
-		
-		for(int i = 0; i<8; i++) {
-			jogo.setCodigoJogo(codJogo);
-			jogo.setCodigoTimeA(null);
-			jogo.setCodigoTimeB(null);
-			jogo.setDataJogo(null);
-			for(int ct = 1; ct<3; ct++) {
-				rGrupo = random.nextInt(4)+1;
-				switch (rGrupo) {
-				case 1:
-					rTime = random.nextInt(4)+1;
-					if(ct == 1) {
-						if(rTime  == 1 && gpA.getCodigoTime1() != null) {
-							jogo.setCodigoTimeA(gpA.getCodigoTime1());
-							gpA.setCodigoTime1(null);
-						}else if(rTime  == 2 && gpA.getCodigoTime2() != null) {
-							jogo.setCodigoTimeA(gpA.getCodigoTime2());
-							gpA.setCodigoTime2(null);
-						}else if(rTime  == 3 && gpA.getCodigoTime3() != null) {
-							jogo.setCodigoTimeA(gpA.getCodigoTime3());
-							gpA.setCodigoTime3(null);
-						}else if(rTime  == 4 && gpA.getCodigoTime4() != null) {
-							jogo.setCodigoTimeA(gpA.getCodigoTime4());
-							gpA.setCodigoTime4(null);
-						}else {
-							ct--;
-						}
-					}else if(ct == 2) {
-						if(rTime  == 1 && gpA.getCodigoTime1() != null) {
-							jogo.setCodigoTimeB(gpA.getCodigoTime1());
-							gpA.setCodigoTime1(null);
-						}else if(rTime  == 2 && gpA.getCodigoTime2() != null) {
-							jogo.setCodigoTimeB(gpA.getCodigoTime2());
-							gpA.setCodigoTime2(null);
-						}else if(rTime  == 3 && gpA.getCodigoTime3() != null) {
-							jogo.setCodigoTimeB(gpA.getCodigoTime3());
-							gpA.setCodigoTime3(null);
-						}else if(rTime  == 4 && gpA.getCodigoTime4() != null) {
-							jogo.setCodigoTimeB(gpA.getCodigoTime4());
-							gpA.setCodigoTime4(null);
-						}else {
-							ct--;
-						}
-					}
-					break;
-				case 2:
-					rTime = random.nextInt(4)+1;
-					if(ct == 1) {
-						if(rTime  == 1 && gpB.getCodigoTime1() != null) {
-							jogo.setCodigoTimeA(gpB.getCodigoTime1());
-							gpB.setCodigoTime1(null);
-						}else if(rTime  == 2 && gpB.getCodigoTime2() != null) {
-							jogo.setCodigoTimeA(gpB.getCodigoTime2());
-							gpB.setCodigoTime2(null);
-						}else if(rTime  == 3 && gpB.getCodigoTime3() != null) {
-							jogo.setCodigoTimeA(gpB.getCodigoTime3());
-							gpB.setCodigoTime3(null);
-						}else if(rTime  == 4 && gpB.getCodigoTime4() != null) {
-							jogo.setCodigoTimeA(gpB.getCodigoTime4());
-							gpB.setCodigoTime4(null);
-						}else {
-							ct--;
-						}
-					}else if(ct == 2) {
-						if(rTime  == 1 && gpB.getCodigoTime1() != null) {
-							jogo.setCodigoTimeB(gpB.getCodigoTime1());
-							gpB.setCodigoTime1(null);
-						}else if(rTime  == 2 && gpB.getCodigoTime2() != null) {
-							jogo.setCodigoTimeB(gpB.getCodigoTime2());
-							gpB.setCodigoTime2(null);
-						}else if(rTime  == 3 && gpB.getCodigoTime3() != null) {
-							jogo.setCodigoTimeB(gpB.getCodigoTime3());
-							gpB.setCodigoTime3(null);
-						}else if(rTime  == 4 && gpB.getCodigoTime4() != null) {
-							jogo.setCodigoTimeB(gpB.getCodigoTime4());
-							gpB.setCodigoTime4(null);
-						}else {
-							ct--;
-						}
-					}
-					break;
-				case 3:
-					rTime = random.nextInt(4)+1;
-					if(ct == 1) {
-						if(rTime  == 1 && gpC.getCodigoTime1() != null) {
-							jogo.setCodigoTimeA(gpC.getCodigoTime1());
-							gpC.setCodigoTime1(null);
-						}else if(rTime  == 2 && gpC.getCodigoTime2() != null) {
-							jogo.setCodigoTimeA(gpC.getCodigoTime2());
-							gpC.setCodigoTime2(null);
-						}else if(rTime  == 3 && gpC.getCodigoTime3() != null) {
-							jogo.setCodigoTimeA(gpC.getCodigoTime3());
-							gpC.setCodigoTime3(null);
-						}else if(rTime  == 4 && gpC.getCodigoTime4() != null) {
-							jogo.setCodigoTimeA(gpC.getCodigoTime4());
-							gpC.setCodigoTime4(null);
-						}else {
-							ct--;
-						}
-					}else if(ct == 2) {
-						if(rTime  == 1 && gpC.getCodigoTime1() != null) {
-							jogo.setCodigoTimeB(gpC.getCodigoTime1());
-							gpC.setCodigoTime1(null);
-						}else if(rTime  == 2 && gpC.getCodigoTime2() != null) {
-							jogo.setCodigoTimeB(gpC.getCodigoTime2());
-							gpC.setCodigoTime2(null);
-						}else if(rTime  == 3 && gpC.getCodigoTime3() != null) {
-							jogo.setCodigoTimeB(gpC.getCodigoTime3());
-							gpC.setCodigoTime3(null);
-						}else if(rTime  == 4 && gpC.getCodigoTime4() != null) {
-							jogo.setCodigoTimeB(gpC.getCodigoTime4());
-							gpC.setCodigoTime4(null);
-						}else {
-							ct--;
-						}
-					}
-					break;
-				case 4:
-					rTime = random.nextInt(4)+1;
-					if(ct == 1) {
-						if(rTime  == 1 && gpD.getCodigoTime1() != null) {
-							jogo.setCodigoTimeA(gpD.getCodigoTime1());
-							gpD.setCodigoTime1(null);
-						}else if(rTime  == 2 && gpD.getCodigoTime2() != null) {
-							jogo.setCodigoTimeA(gpD.getCodigoTime2());
-							gpD.setCodigoTime2(null);
-						}else if(rTime  == 3 && gpD.getCodigoTime3() != null) {
-							jogo.setCodigoTimeA(gpD.getCodigoTime3());
-							gpD.setCodigoTime3(null);
-						}else if(rTime  == 4 && gpD.getCodigoTime4() != null) {
-							jogo.setCodigoTimeA(gpD.getCodigoTime4());
-							gpD.setCodigoTime4(null);
-						}else {
-							ct--;
-						}
-					}else if(ct == 2) {
-						if(rTime  == 1 && gpD.getCodigoTime1() != null) {
-							jogo.setCodigoTimeB(gpD.getCodigoTime1());
-							gpD.setCodigoTime1(null);
-						}else if(rTime  == 2 && gpD.getCodigoTime2() != null) {
-							jogo.setCodigoTimeB(gpD.getCodigoTime2());
-							gpD.setCodigoTime2(null);
-						}else if(rTime  == 3 && gpD.getCodigoTime3() != null) {
-							jogo.setCodigoTimeB(gpD.getCodigoTime3());
-							gpD.setCodigoTime3(null);
-						}else if(rTime  == 4 && gpD.getCodigoTime4() != null) {
-							jogo.setCodigoTimeB(gpD.getCodigoTime4());
-							gpD.setCodigoTime4(null);
-						}else {
-							ct--;
-						}
-					}
-					break;
-				}//end switch
-			}//end for
-			jogo.setCodRodada(codRodada);
-
-			switch(jogo.getCodRodada()) {
+		/////////////////////////////////////////1
+		for(int i = 1; i<9; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
 			case 1:
-				jogo.setDataJogo("01-09-2021");
-			break;
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
 			case 2:
-				jogo.setDataJogo("05-09-2021");
-			break;
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
 			case 3:
-				jogo.setDataJogo("08-09-2021");
-			break;
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
 			case 4:
-				jogo.setDataJogo("12-09-2021");
-			break;
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
 			case 5:
-				jogo.setDataJogo("15-09-2021");
-			break;
+				jogo.setCodigoTimeA(gpC.getCodigoTime1());
+				jogo.setCodigoTimeB(gpD.getCodigoTime1());
+				break;
 			case 6:
-				jogo.setDataJogo("19-09-2021");
-			break;
+				jogo.setCodigoTimeA(gpC.getCodigoTime2());
+				jogo.setCodigoTimeB(gpD.getCodigoTime2());
+				break;
 			case 7:
-				jogo.setDataJogo("22-09-2021");
-			break;
+				jogo.setCodigoTimeA(gpC.getCodigoTime3());
+				jogo.setCodigoTimeB(gpD.getCodigoTime3());
+				break;
 			case 8:
-				jogo.setDataJogo("26-09-2021");
-			break;
+				jogo.setCodigoTimeA(gpC.getCodigoTime4());
+				jogo.setCodigoTimeB(gpD.getCodigoTime4());
+				break;
+			}
+			jogo.setDataJogo("01-09-2021");
+			jogo.setCodRodada(1);
+			InserirJogosNaTabela(jogo);
+		}
+
+		////////////////////////////////////////////////2
+		for(int i = 9; i<17; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
 			case 9:
-				jogo.setDataJogo("29-09-2021");
-			break;
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
 			case 10:
-				jogo.setDataJogo("03-10-2021");
-			break;
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
 			case 11:
-				jogo.setDataJogo("06-10-2021");
-			break;
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
 			case 12:
-				jogo.setDataJogo("10-10-2021");
-			break;
-			}	
-			boolean validar = true;
-			if(jogo.getCodRodada() != 1) {
-				
-				//validar = [chamar a procedure]
-				try {
-					validar = ijg.validaRodada(jogo);
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
+			case 13:
+				jogo.setCodigoTimeA(gpC.getCodigoTime1());
+				jogo.setCodigoTimeB(gpD.getCodigoTime2());
+				break;
+			case 14:
+				jogo.setCodigoTimeA(gpC.getCodigoTime2());
+				jogo.setCodigoTimeB(gpD.getCodigoTime1());
+				break;
+			case 15:
+				jogo.setCodigoTimeA(gpC.getCodigoTime3());
+				jogo.setCodigoTimeB(gpD.getCodigoTime4());
+				break;
+			case 16:
+				jogo.setCodigoTimeA(gpC.getCodigoTime4());
+				jogo.setCodigoTimeB(gpD.getCodigoTime3());
+				break;
 			}
-			if(validar == true) {
-				InserirJogosNaTabela(jogo);
-				codJogo++;
-			}else{
-				i--;
+			jogo.setDataJogo("05-09-2021");
+			jogo.setCodRodada(2);
+			InserirJogosNaTabela(jogo);
+		}
+
+		////////////////////////////////////////////////3
+		for(int i = 17; i<25; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
+			case 17:
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
+			case 18:
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
+			case 19:
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
+			case 20:
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
+			case 21:
+				jogo.setCodigoTimeA(gpC.getCodigoTime1());
+				jogo.setCodigoTimeB(gpD.getCodigoTime3());
+				break;
+			case 22:
+				jogo.setCodigoTimeA(gpC.getCodigoTime2());
+				jogo.setCodigoTimeB(gpD.getCodigoTime4());
+				break;
+			case 23:
+				jogo.setCodigoTimeA(gpC.getCodigoTime3());
+				jogo.setCodigoTimeB(gpD.getCodigoTime1());
+				break;
+			case 24:
+				jogo.setCodigoTimeA(gpC.getCodigoTime4());
+				jogo.setCodigoTimeB(gpD.getCodigoTime2());
+				break;
 			}
-		}//end for
-		codRodada++;
+			jogo.setDataJogo("08-09-2021");
+			jogo.setCodRodada(3);
+			InserirJogosNaTabela(jogo);
+		}
+
+		////////////////////////////////////////////////4
+		for(int i = 25; i<33; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
+			case 25:
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
+			case 26:
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
+			case 27:
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
+			case 28:
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
+			case 29:
+				jogo.setCodigoTimeA(gpC.getCodigoTime1());
+				jogo.setCodigoTimeB(gpD.getCodigoTime4());
+				break;
+			case 30:
+				jogo.setCodigoTimeA(gpC.getCodigoTime2());
+				jogo.setCodigoTimeB(gpD.getCodigoTime3());
+				break;
+			case 31:
+				jogo.setCodigoTimeA(gpC.getCodigoTime3());
+				jogo.setCodigoTimeB(gpD.getCodigoTime2());
+				break;
+			case 32:
+				jogo.setCodigoTimeA(gpC.getCodigoTime4());
+				jogo.setCodigoTimeB(gpD.getCodigoTime1());
+				break;
+			}
+			jogo.setDataJogo("12-09-2021");
+			jogo.setCodRodada(4);
+			InserirJogosNaTabela(jogo);
+		}
+		/////////////////////////////////////////5
+		for(int i = 33; i<41; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
+			case 33:
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpD.getCodigoTime1());
+				break;
+			case 34:
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpD.getCodigoTime2());
+				break;
+			case 35:
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpD.getCodigoTime3());
+				break;
+			case 36:
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpD.getCodigoTime4());
+				break;
+			case 37:
+				jogo.setCodigoTimeA(gpC.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
+			case 38:
+				jogo.setCodigoTimeA(gpC.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
+			case 39:
+				jogo.setCodigoTimeA(gpC.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
+			case 40:
+				jogo.setCodigoTimeA(gpC.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
+			}
+			jogo.setDataJogo("15-09-2021");
+			jogo.setCodRodada(5);
+			InserirJogosNaTabela(jogo);
+		}
+
+		////////////////////////////////////////////////6
+		for(int i = 41; i<49; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
+			case 41:
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpD.getCodigoTime2());
+				break;
+			case 42:
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpD.getCodigoTime1());
+				break;
+			case 43:
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpD.getCodigoTime4());
+				break;
+			case 44:
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpD.getCodigoTime3());
+				break;
+			case 45:
+				jogo.setCodigoTimeA(gpC.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
+			case 46:
+				jogo.setCodigoTimeA(gpC.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
+			case 47:
+				jogo.setCodigoTimeA(gpC.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
+			case 48:
+				jogo.setCodigoTimeA(gpC.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
+			}
+			jogo.setDataJogo("19-09-2021");
+			jogo.setCodRodada(6);
+			InserirJogosNaTabela(jogo);
+		}
+
+		////////////////////////////////////////////////7
+		for(int i = 49; i<57; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
+			case 49:
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpD.getCodigoTime3());
+				break;
+			case 50:
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpD.getCodigoTime4());
+				break;
+			case 51:
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpD.getCodigoTime1());
+				break;
+			case 52:
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpD.getCodigoTime2());
+				break;
+			case 53:
+				jogo.setCodigoTimeA(gpC.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
+			case 54:
+				jogo.setCodigoTimeA(gpC.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
+			case 55:
+				jogo.setCodigoTimeA(gpC.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
+			case 56:
+				jogo.setCodigoTimeA(gpC.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
+			}
+			jogo.setDataJogo("22-09-2021");
+			jogo.setCodRodada(7);
+			InserirJogosNaTabela(jogo);
+		}
+
+		////////////////////////////////////////////////8
+		for(int i = 57; i<65; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
+			case 57:
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpD.getCodigoTime4());
+				break;
+			case 58:
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpD.getCodigoTime3());
+				break;
+			case 59:
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpD.getCodigoTime2());
+				break;
+			case 60:
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpD.getCodigoTime1());
+				break;
+			case 61:
+				jogo.setCodigoTimeA(gpC.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
+			case 62:
+				jogo.setCodigoTimeA(gpC.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
+			case 63:
+				jogo.setCodigoTimeA(gpC.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
+			case 64:
+				jogo.setCodigoTimeA(gpC.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
+			}
+			jogo.setDataJogo("26-09-2021");
+			jogo.setCodRodada(8);
+			InserirJogosNaTabela(jogo);
+		}
+		/////////////////////////////////////////9
+		for(int i = 65; i<73; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
+			case 65:
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpC.getCodigoTime1());
+				break;
+			case 66:
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpC.getCodigoTime2());
+				break;
+			case 67:
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpC.getCodigoTime3());
+				break;
+			case 68:
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpC.getCodigoTime4());
+				break;
+			case 69:
+				jogo.setCodigoTimeA(gpD.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
+			case 70:
+				jogo.setCodigoTimeA(gpD.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
+			case 71:
+				jogo.setCodigoTimeA(gpD.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
+			case 72:
+				jogo.setCodigoTimeA(gpD.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
+			}
+			jogo.setDataJogo("29-09-2021");
+			jogo.setCodRodada(9);
+			InserirJogosNaTabela(jogo);
+		}
+
+		////////////////////////////////////////////////10
+		for(int i = 73; i<81; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
+			case 73:
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpC.getCodigoTime2());
+				break;
+			case 74:
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpC.getCodigoTime1());
+				break;
+			case 75:
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpC.getCodigoTime4());
+				break;
+			case 76:
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpC.getCodigoTime3());
+				break;
+			case 77:
+				jogo.setCodigoTimeA(gpD.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
+			case 78:
+				jogo.setCodigoTimeA(gpD.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
+			case 79:
+				jogo.setCodigoTimeA(gpD.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
+			case 80:
+				jogo.setCodigoTimeA(gpD.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
+			}
+			jogo.setDataJogo("03-10-2021");
+			jogo.setCodRodada(10);
+			InserirJogosNaTabela(jogo);
+		}
+
+		////////////////////////////////////////////////11
+		for(int i = 81; i<89; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
+			case 81:
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpC.getCodigoTime3());
+				break;
+			case 82:
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpC.getCodigoTime4());
+				break;
+			case 83:
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpC.getCodigoTime1());
+				break;
+			case 84:
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpC.getCodigoTime2());
+				break;
+			case 85:
+				jogo.setCodigoTimeA(gpD.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
+			case 86:
+				jogo.setCodigoTimeA(gpD.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
+			case 87:
+				jogo.setCodigoTimeA(gpD.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
+			case 88:
+				jogo.setCodigoTimeA(gpD.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
+			}
+			jogo.setDataJogo("06-10-2021");
+			jogo.setCodRodada(11);
+			InserirJogosNaTabela(jogo);
+		}
+
+		////////////////////////////////////////////////12
+		for(int i = 89; i<97; i++) {
+			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(i);
+			switch(i) {
+			case 89:
+				jogo.setCodigoTimeA(gpA.getCodigoTime1());
+				jogo.setCodigoTimeB(gpC.getCodigoTime4());
+				break;
+			case 90:
+				jogo.setCodigoTimeA(gpA.getCodigoTime2());
+				jogo.setCodigoTimeB(gpC.getCodigoTime3());
+				break;
+			case 91:
+				jogo.setCodigoTimeA(gpA.getCodigoTime3());
+				jogo.setCodigoTimeB(gpC.getCodigoTime2());
+				break;
+			case 92:
+				jogo.setCodigoTimeA(gpA.getCodigoTime4());
+				jogo.setCodigoTimeB(gpC.getCodigoTime1());
+				break;
+			case 93:
+				jogo.setCodigoTimeA(gpD.getCodigoTime1());
+				jogo.setCodigoTimeB(gpB.getCodigoTime4());
+				break;
+			case 94:
+				jogo.setCodigoTimeA(gpD.getCodigoTime2());
+				jogo.setCodigoTimeB(gpB.getCodigoTime3());
+				break;
+			case 95:
+				jogo.setCodigoTimeA(gpD.getCodigoTime3());
+				jogo.setCodigoTimeB(gpB.getCodigoTime2());
+				break;
+			case 96:
+				jogo.setCodigoTimeA(gpD.getCodigoTime4());
+				jogo.setCodigoTimeB(gpB.getCodigoTime1());
+				break;
+			}
+			jogo.setDataJogo("10-10-2021");
+			jogo.setCodRodada(12);
+			InserirJogosNaTabela(jogo);
+		}
 	}
+
+
 
 }

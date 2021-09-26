@@ -16,7 +16,7 @@ public class GenericDao {
 
 		 Class.forName("net.sourceforge.jtds.jdbc.Driver");
 	     c = DriverManager.getConnection("jdbc:jtds:sqlserver://127.0.0.1:1433;DatabaseName=bdPaulistao;namedPipe=true","usuario","senha");
-	     System.out.println("Conexao ok");
+	     //System.out.println("Conexao ok");
 	     return c;
 	 }
 	
