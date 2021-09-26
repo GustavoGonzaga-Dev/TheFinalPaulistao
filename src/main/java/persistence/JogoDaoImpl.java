@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
+import java.util.List;
 
 import model.Jogo;
 import model.Time;
@@ -66,7 +67,7 @@ public class JogoDaoImpl implements IJogoDao {
 	}
 
 	@Override
-	public ArrayList<Jogo> encontrarJogos(String datajg) throws SQLException {
+	public List<Jogo> encontrarJogos(String datajg) throws SQLException {
 		try {
 			c = JogoDaoImpll();
 		} catch (ClassNotFoundException | SQLException e) {
@@ -77,23 +78,27 @@ public class JogoDaoImpl implements IJogoDao {
 		PreparedStatement ps = c.prepareStatement(sql);
 		ps.setString(1, datajg);
 		ResultSet rs = ps.executeQuery();
-		ArrayList <Jogo> listaJogos= new ArrayList<>();
+		List <Jogo> listaJogos= new ArrayList<>();
+		int i = 0;
 		while (rs.next()) {
 			Jogo jogo = new Jogo();
-			Time tA = new Time();
-			Time tB = new Time();
-			tA.setNomeTime(rs.getString("TIMEA"));
-			jogo.settA(tA);
-			tB.setNomeTime(rs.getString("TIMEB"));
-			jogo.settB(tB);
+			//Time tA = new Time();
+			//Time tB = new Time();
+			jogo.settA(rs.getString("TIMEA"));
+			//jogo.settA(tA);
+			jogo.settB(rs.getString("TIMEB"));
+			//jogo.settB(tB);
 			jogo.setGolsTimeA(rs.getInt("GolsTimeA"));
 			jogo.setGolsTImeB(rs.getInt("GolsTimeB"));
 			jogo.setDataJogo(rs.getString("DataJogo"));
-			
+			//System.out.println("putaqueopariu " + jogo.gettA()+ jogo.getGolsTimeA());
 			listaJogos.add(jogo);
+			i++;
 		}
 		rs.close();
 		ps.close();
+		i--;
+		System.out.println("acabou de carregar essa merda: " + listaJogos.get(1));
 		return listaJogos;
 	}
 

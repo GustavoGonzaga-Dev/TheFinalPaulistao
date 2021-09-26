@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,12 +28,13 @@ public class JogoServlet extends HttpServlet {
 		String cmd = request.getParameter("button");
 		System.out.println("entrou aqui");
 		System.out.println(cmd);		
-		ArrayList<Jogo> listaJogos = new ArrayList<Jogo>();
+		List<Jogo> listaJogos = new ArrayList<Jogo>();
 		String jg = validaCampos(request,cmd);
 		try {
 			if (jg != null) {
 				if(cmd.contains("Pesquisar")) {
-					listaJogos = ijg.encontrarJogos(jg);				
+					listaJogos = ijg.encontrarJogos(jg);
+					System.out.println("carregou e esse é o valor: " + listaJogos.get(0));
 				}	
 			}else {
 				System.out.println("TA vazio a parada");
@@ -49,8 +51,10 @@ public class JogoServlet extends HttpServlet {
 	
 	private String validaCampos(HttpServletRequest request, String cmd){
 		String jg = null ;
-		if (cmd.contains("Pesquisar")) {
+		if (cmd.equals("Pesquisar")) {
+			System.out.println("entrou no if");
 			jg = (request.getParameter("DataJogo"));
+			System.out.println(jg);
 		}
 		return jg;
 	}

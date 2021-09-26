@@ -15,7 +15,7 @@
 	
 	<div>
 		<form action="jogo" method ="post">
-			<input id="text" type="text">
+			<input value="00-00-0000" id="text" type="text" name="DataJogo">
 	    	<input type="submit" value="Pesquisar" id="buscar_jogos" name="button"/>	
 		</form>
 	</div>
