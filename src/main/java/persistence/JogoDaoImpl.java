@@ -66,18 +66,18 @@ public class JogoDaoImpl implements IJogoDao {
 	}
 
 	@Override
-	public ArrayList<Jogo> encontrarJogos(String jg) throws SQLException {
+	public ArrayList<Jogo> encontrarJogos(String datajg) throws SQLException {
 		try {
 			c = JogoDaoImpll();
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		
-		ArrayList <Jogo> listaJogos= new ArrayList<>();
-		String sql = "SELECT tA.NomeTime AS TIMEA,tB.NomeTime AS TIMEB ,GolsTimeA,GolsTImeB,DataJogo FROM jogos j,Times tA, Times tB WHERE tA.CodigoTime = j.CodigoTimeA and tB.CodigoTime = j.CodigoTimeB and datajogo = ?";
+		System.out.println("passou nessa parte");
+		String sql = "SELECT tA.NomeTime AS TIMEA,tB.NomeTime AS TIMEB ,GolsTimeA,GolsTimeB,DataJogo FROM jogos j,Times tA, Times tB WHERE tA.CodigoTime = j.CodigoTimeA and tB.CodigoTime = j.CodigoTimeB and datajogo LIKE ?";
 		PreparedStatement ps = c.prepareStatement(sql);
-		ps.setString(1,jg.toString());
+		ps.setString(1, datajg);
 		ResultSet rs = ps.executeQuery();
+		ArrayList <Jogo> listaJogos= new ArrayList<>();
 		while (rs.next()) {
 			Jogo jogo = new Jogo();
 			Time tA = new Time();

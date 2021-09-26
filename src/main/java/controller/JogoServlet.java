@@ -19,8 +19,6 @@ import persistence.JogoDaoImpl;
 public class JogoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private IJogoDao ijg;
-    
-
     public JogoServlet() {
         ijg = new JogoDaoImpl();
     }
@@ -28,11 +26,17 @@ public class JogoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String cmd = request.getParameter("button");
 		System.out.println("entrou aqui");
+		System.out.println(cmd);		
 		ArrayList<Jogo> listaJogos = new ArrayList<Jogo>();
-	
+		String jg = validaCampos(request,cmd);
 		try {
-			if(cmd.contains("Pesquisar")) {
-				listaJogos = ijg.encontrarJogos("");
+			if (jg != null) {
+				if(cmd.contains("Pesquisar")) {
+					listaJogos = ijg.encontrarJogos(jg);				
+				}	
+			}else {
+				System.out.println("TA vazio a parada");
+
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -42,5 +46,12 @@ public class JogoServlet extends HttpServlet {
             rd.forward(request, response);
 		}
 	}
-
+	
+	private String validaCampos(HttpServletRequest request, String cmd){
+		String jg = null ;
+		if (cmd.contains("Pesquisar")) {
+			jg = (request.getParameter("DataJogo"));
+		}
+		return jg;
+	}
 }

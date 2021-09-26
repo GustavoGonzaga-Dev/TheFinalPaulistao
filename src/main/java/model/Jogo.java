@@ -2,11 +2,11 @@ package model;
 
 public class Jogo {
 	
-	private Integer CodigoJogo;
-	private Integer CodigoTimeA;
-    private Integer CodigoTimeB;
-    private Integer GolsTimeA;
-    private Integer GolsTImeB;
+	private int CodigoJogo;
+	private int CodigoTimeA;
+    private int CodigoTimeB;
+    private int GolsTimeA;
+    private int GolsTImeB;
     private String DataJogo;
     private Integer CodRodada;
 	private Time tA;
@@ -26,34 +26,34 @@ public class Jogo {
 	}
 
     
-	public Integer getCodigoJogo() {
+	public int getCodigoJogo() {
 		return CodigoJogo;
 	}
-	public void setCodigoJogo(Integer codigoJogo) {
+	public void setCodigoJogo(int codigoJogo) {
 		CodigoJogo = codigoJogo;
 	}
-	public Integer getCodigoTimeA() {
+	public int getCodigoTimeA() {
 		return CodigoTimeA;
 	}
-	public void setCodigoTimeA(Integer codigoTimeA) {
+	public void setCodigoTimeA(int codigoTimeA) {
 		CodigoTimeA = codigoTimeA;
 	}
-	public Integer getCodigoTimeB() {
+	public int getCodigoTimeB() {
 		return CodigoTimeB;
 	}
-	public void setCodigoTimeB(Integer codigoTimeB) {
+	public void setCodigoTimeB(int codigoTimeB) {
 		CodigoTimeB = codigoTimeB;
 	}
-	public Integer getGolsTimeA() {
+	public int getGolsTimeA() {
 		return GolsTimeA;
 	}
-	public void setGolsTimeA(Integer golsTimeA) {
+	public void setGolsTimeA(int golsTimeA) {
 		GolsTimeA = golsTimeA;
 	}
-	public Integer getGolsTImeB() {
+	public int getGolsTImeB() {
 		return GolsTImeB;
 	}
-	public void setGolsTImeB(Integer golsTImeB) {
+	public void setGolsTImeB(int golsTImeB) {
 		GolsTImeB = golsTImeB;
 	}
 	public String getDataJogo() {
