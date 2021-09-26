@@ -9,6 +9,22 @@ public class Jogo {
     private Integer GolsTImeB;
     private String DataJogo;
     private Integer CodRodada;
+	private Time tA;
+    private Time tB;    
+    
+    public Time gettA() {
+		return tA;
+	}
+	public void settA(Time tA) {
+		this.tA = tA;
+	}
+	public Time gettB() {
+		return tB;
+	}
+	public void settB(Time tB) {
+		this.tB = tB;
+	}
+
     
 	public Integer getCodigoJogo() {
 		return CodigoJogo;
