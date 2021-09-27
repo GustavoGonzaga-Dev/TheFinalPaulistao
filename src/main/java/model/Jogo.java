@@ -8,7 +8,7 @@ public class Jogo {
     private int GolsTimeA;
     private int GolsTImeB;
     private String DataJogo;
-    private Integer CodRodada;
+    private int CodRodada;
 	private String tA;
     private String tB; 
     
@@ -69,6 +69,16 @@ public class Jogo {
 	}
 	@Override
 	public String toString() {
-		return "Jogo [ GolsTimeA=" + GolsTimeA + ", GolsTImeB=" + GolsTImeB + ", DataJogo=" + DataJogo + ", + , tA=" + tA + ", tB=" + tB + "]";
+		return "" +
+				"   [Jogo=" + CodigoJogo +
+				" ], [" + tA + 
+				"], [Gols: " + GolsTimeA +
+				"], [  X  " + 
+				"], [" + tB + 
+				"], [Gols: " + GolsTImeB + 
+				"], [Data=" + DataJogo + 
+				"], [Rodada=" + CodRodada + 
+				"]";
 	}
+
 }

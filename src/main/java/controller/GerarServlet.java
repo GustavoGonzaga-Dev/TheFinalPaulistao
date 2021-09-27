@@ -44,14 +44,14 @@ public class GerarServlet extends HttpServlet {
 		switch (cmd){
 		case "Gerar Grupos":
 			EnxerTabGrupo();
-			System.out.println("Termminei o metodo de gerar grupos");
+			System.out.println("Terminei o metodo de gerar grupos");
 			RequestDispatcher rdG = request.getRequestDispatcher("grupos.jsp");
 			rdG.forward(request, response);
 			break;
 		case "Gerar Jogos":
 			geraJogo();
-			System.out.println("Termminei o metodo de gerar jogo");
-			RequestDispatcher rdJ = request.getRequestDispatcher("jogos.jsp");
+			System.out.println("Terminei o metodo de gerar jogo");
+			RequestDispatcher rdJ = request.getRequestDispatcher("rodadas.jsp");
 			rdJ.forward(request, response);
 			break;
 		case "Gerar Rodadas":
@@ -622,7 +622,4 @@ public class GerarServlet extends HttpServlet {
 			InserirJogosNaTabela(jogo);
 		}
 	}
-
-
-
 }

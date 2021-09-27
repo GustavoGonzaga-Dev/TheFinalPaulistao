@@ -72,24 +72,26 @@ public class JogoDaoImpl implements IJogoDao {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		String sql = "SELECT tA.NomeTime AS TIMEA,tB.NomeTime AS TIMEB ,GolsTimeA,GolsTimeB,DataJogo FROM jogos j,Times tA, Times tB WHERE tA.CodigoTime = j.CodigoTimeA and tB.CodigoTime = j.CodigoTimeB and datajogo LIKE ?";
+		String sql = "SELECT j.CodigoJogo, tA.NomeTime AS TIMEA,tB.NomeTime AS TIMEB ,GolsTimeA,GolsTimeB,DataJogo, j.CodRodada FROM jogos j,Times tA, Times tB WHERE tA.CodigoTime = j.CodigoTimeA and tB.CodigoTime = j.CodigoTimeB and datajogo LIKE ?";
 		PreparedStatement ps = c.prepareStatement(sql);
 		ps.setString(1, datajg);
 		ResultSet rs = ps.executeQuery();
 		List <Jogo> listaJogos= new ArrayList<>();
 		while (rs.next()) {
 			Jogo jogo = new Jogo();
+			jogo.setCodigoJogo(rs.getInt("CodigoJogo"));
 			jogo.settA(rs.getString("TIMEA"));
 			jogo.settB(rs.getString("TIMEB"));
 			jogo.setGolsTimeA(rs.getInt("GolsTimeA"));
 			jogo.setGolsTImeB(rs.getInt("GolsTimeB"));
 			jogo.setDataJogo(rs.getString("DataJogo"));
+			jogo.setCodRodada(rs.getInt("CodRodada"));
 			listaJogos.add(jogo);
 		}
 		rs.close();
 		ps.close();
 		for(int i = 0; i < listaJogos.size();i++) {
-			System.out.println("Valores que veio do Banco: " + listaJogos.get(i));
+			System.out.println(listaJogos.get(i));
 		}
 		return listaJogos;
 	}
