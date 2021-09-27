@@ -14,12 +14,33 @@
     <p>Insira uma data e procure os jogos.</p>
 	
 	<div>
-		<form action="jogo" method ="post">
+		<form action="jogo" method ="post"> 
 			<input value="00-00-0000" id="text" type="text" name="DataJogo">
 	    	<input type="submit" value="Pesquisar" id="buscar_jogos" name="button"/>	
 		</form>
 	</div>
 	
+	   <div>
+        <table border = 1>
+        	<tr>
+            	<th>Primeiro time</th>
+				<th>Gols do primeiro time</th>            	
+                <th>&nbsp;</th>
+                <th>Segundo time</th>
+                <th>Gols do segundo time</th>
+                <th>Data</th>
+            </tr>
+            <tr>
+                <td>Time A</td>
+            	<td>Gols Time A</td>  
+            	<td> X </td>              
+                <td>Time B</td> 
+                <td>Gols Time B</td>
+                <td>Data do Jogo</td>
+            </tr>
+		</table>
+    </div>
+<!--	
     <div>
     	<c:if test="${not empty listaJogos}">
 	        <table border = 1>
@@ -44,6 +65,6 @@
 			</table>
 		</c:if>
     </div>
-
+  -->
 </body>
 </html>

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Jogo;
-import model.Time;
+
 public class JogoDaoImpl implements IJogoDao {
 
 	private Connection c;
@@ -35,12 +35,11 @@ public class JogoDaoImpl implements IJogoDao {
 		cs.setInt(3, jogo.getCodigoTimeB());
 		cs.setInt(4, jogo.getCodRodada());
 		cs.setString(5, jogo.getDataJogo());
-		//cs.registerOutParameter(2, Types.VARCHAR);
 		cs.execute();
 		cs.close();
 
 		String saida = "Chamou aqui";
-		//System.out.println(saida);
+
 		return saida;
 
 	}
@@ -73,32 +72,25 @@ public class JogoDaoImpl implements IJogoDao {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("passou nessa parte");
 		String sql = "SELECT tA.NomeTime AS TIMEA,tB.NomeTime AS TIMEB ,GolsTimeA,GolsTimeB,DataJogo FROM jogos j,Times tA, Times tB WHERE tA.CodigoTime = j.CodigoTimeA and tB.CodigoTime = j.CodigoTimeB and datajogo LIKE ?";
 		PreparedStatement ps = c.prepareStatement(sql);
 		ps.setString(1, datajg);
 		ResultSet rs = ps.executeQuery();
 		List <Jogo> listaJogos= new ArrayList<>();
-		int i = 0;
 		while (rs.next()) {
 			Jogo jogo = new Jogo();
-			//Time tA = new Time();
-			//Time tB = new Time();
 			jogo.settA(rs.getString("TIMEA"));
-			//jogo.settA(tA);
 			jogo.settB(rs.getString("TIMEB"));
-			//jogo.settB(tB);
 			jogo.setGolsTimeA(rs.getInt("GolsTimeA"));
 			jogo.setGolsTImeB(rs.getInt("GolsTimeB"));
 			jogo.setDataJogo(rs.getString("DataJogo"));
-			//System.out.println("putaqueopariu " + jogo.gettA()+ jogo.getGolsTimeA());
 			listaJogos.add(jogo);
-			i++;
 		}
 		rs.close();
 		ps.close();
-		i--;
-		System.out.println("acabou de carregar essa merda: " + listaJogos.get(1));
+		for(int i = 0; i < listaJogos.size();i++) {
+			System.out.println("Valores que veio do Banco: " + listaJogos.get(i));
+		}
 		return listaJogos;
 	}
 

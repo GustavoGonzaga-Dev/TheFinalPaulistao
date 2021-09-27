@@ -27,13 +27,7 @@
 			<script >function cadastroJ(){alert('Os Jogos foram gerados!')}</script>
 		</form>
 	</div>		
-		<br>	
-	<div class="rodada" >
-		<form action="Gerar" method="post">
-			<input type="submit" value="Gerar Rodadas" id="button" name="button" onclick="cadastro()" >
-			<script >function cadastro(){alert('As rodadas foram geradas!')}</script>
-		</form>
-	</div>	
+
 		
 		
 </body>

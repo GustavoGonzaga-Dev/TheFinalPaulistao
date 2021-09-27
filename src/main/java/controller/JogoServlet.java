@@ -25,16 +25,13 @@ public class JogoServlet extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String cmd = request.getParameter("button");
-		System.out.println("entrou aqui");
-		System.out.println(cmd);		
+		String cmd = request.getParameter("button");	
 		List<Jogo> listaJogos = new ArrayList<Jogo>();
 		String jg = validaCampos(request,cmd);
 		try {
 			if (jg != null) {
 				if(cmd.contains("Pesquisar")) {
 					listaJogos = ijg.encontrarJogos(jg);
-					System.out.println("carregou e esse é o valor: " + listaJogos.get(0));
 				}	
 			}else {
 				System.out.println("TA vazio a parada");
@@ -43,7 +40,7 @@ public class JogoServlet extends HttpServlet {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			request.setAttribute("listaJogos", listaJogos);
+			/*request.setAttribute("listaJogos", listaJogos);*/
 			RequestDispatcher rd = request.getRequestDispatcher("rodadas.jsp");
             rd.forward(request, response);
 		}
@@ -52,9 +49,7 @@ public class JogoServlet extends HttpServlet {
 	private String validaCampos(HttpServletRequest request, String cmd){
 		String jg = null ;
 		if (cmd.equals("Pesquisar")) {
-			System.out.println("entrou no if");
 			jg = (request.getParameter("DataJogo"));
-			System.out.println(jg);
 		}
 		return jg;
 	}

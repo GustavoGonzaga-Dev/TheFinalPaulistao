@@ -67,4 +67,8 @@ public class Jogo {
 	public void setCodRodada(Integer codRodada) {
 		CodRodada = codRodada;
 	}
+	@Override
+	public String toString() {
+		return "Jogo [ GolsTimeA=" + GolsTimeA + ", GolsTImeB=" + GolsTImeB + ", DataJogo=" + DataJogo + ", + , tA=" + tA + ", tB=" + tB + "]";
+	}
 }
