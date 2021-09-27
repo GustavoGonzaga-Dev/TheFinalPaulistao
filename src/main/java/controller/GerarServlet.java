@@ -78,10 +78,10 @@ public class GerarServlet extends HttpServlet {
 		try {
 			igp.gerarGrupos();
 			encherVariaveis();
-			System.out.println(gpA.getNomeGrupo() + gpA.getCodigoTime1()+ gpA.getCodigoTime2()+ gpA.getCodigoTime3()+ gpA.getCodigoTime4());
-			System.out.println(gpB.getNomeGrupo() + gpB.getCodigoTime1()+ gpB.getCodigoTime2()+ gpB.getCodigoTime3()+ gpB.getCodigoTime4());
-			System.out.println(gpC.getNomeGrupo() + gpC.getCodigoTime1()+ gpC.getCodigoTime2()+ gpC.getCodigoTime3()+ gpC.getCodigoTime4());
-			System.out.println(gpD.getNomeGrupo() + gpD.getCodigoTime1()+ gpD.getCodigoTime2()+ gpD.getCodigoTime3()+ gpD.getCodigoTime4());
+			System.out.println(gpA.getNomeGrupo() + ", "+ gpA.getNomeTime1()+ ", "+ gpA.getNomeTime2()+ ", "+ gpA.getNomeTime3()+ ", "+ gpA.getNomeTime4());
+			System.out.println(gpB.getNomeGrupo() + ", "+ gpB.getNomeTime1()+ ", "+ gpB.getNomeTime2()+ ", "+ gpB.getNomeTime3()+ ", "+ gpB.getNomeTime4());
+			System.out.println(gpC.getNomeGrupo() + ", "+ gpC.getNomeTime1()+ ", "+ gpC.getNomeTime2()+ ", "+ gpC.getNomeTime3()+ ", "+ gpC.getNomeTime4());
+			System.out.println(gpD.getNomeGrupo() + ", "+ gpD.getNomeTime1()+ ", "+ gpD.getNomeTime2()+ ", "+ gpD.getNomeTime3()+ ", "+ gpD.getNomeTime4());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

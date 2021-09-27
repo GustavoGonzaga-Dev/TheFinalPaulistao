@@ -49,7 +49,7 @@ public class GrupoDaoImpl implements IGrupoDao{
 		String sql = "SELECT codigotime1, codigotime2, codigotime3, codigotime4 FROM grupos WHERE nomegrupo = ?";
 		PreparedStatement ps = c.prepareStatement(sql);
 		//System.out.println("passou dessa merda de linha");
-		
+
 		ps.setString(1, gp.getNomeGrupo());
 		ResultSet rs = ps.executeQuery();
 		if (rs.next()) {
@@ -60,6 +60,27 @@ public class GrupoDaoImpl implements IGrupoDao{
 		}
 		rs.close();
 		ps.close();
+		///////////////////////////
+		String sqll = "SELECT nometime FROM times WHERE codigotime in(?, ?, ?, ?)";
+		PreparedStatement pss = c.prepareStatement(sqll);
+		//System.out.println("passou dessa merda de linha");
+
+		pss.setInt(1, gp.getCodigoTime1());
+		pss.setInt(2, gp.getCodigoTime2());
+		pss.setInt(3, gp.getCodigoTime3());
+		pss.setInt(4, gp.getCodigoTime4());
+		ResultSet rss = pss.executeQuery();
+		rss.next();
+		gp.setNomeTime1(rss.getString("nometime"));
+		rss.next();
+		gp.setNomeTime2(rss.getString("nometime"));
+		rss.next();
+		gp.setNomeTime3(rss.getString("nometime"));
+		rss.next();
+		gp.setNomeTime4(rss.getString("nometime"));
+
+		rss.close();
+		pss.close();
 		return gp;
 	}
 }
