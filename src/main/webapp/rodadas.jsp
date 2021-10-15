@@ -19,30 +19,9 @@
 	    	<input type="submit" value="Pesquisar" id="buscar_jogos" name="button"/>	
 		</form>
 	</div>
-	
-	   <div>
-        <table border = 1>
-        	<tr>
-            	<th>Primeiro time</th>
-				<th>Gols do primeiro time</th>            	
-                <th>&nbsp;</th>
-                <th>Segundo time</th>
-                <th>Gols do segundo time</th>
-                <th>Data</th>
-            </tr>
-            <tr>
-                <td>Time A</td>
-            	<td>Gols Time A</td>  
-            	<td> X </td>              
-                <td>Time B</td> 
-                <td>Gols Time B</td>
-                <td>Data do Jogo</td>
-            </tr>
-		</table>
-    </div>
-<!--	
+
     <div>
-    	<c:if test="${not empty listaJogos}">
+    	<c:if test="${not empty listaJogos }">
 	        <table border = 1>
 	        	<tr>
 	            	<th>Primeiro time</th>
@@ -52,19 +31,19 @@
 	                <th>Gols do segundo time</th>
 	                <th>Data</th>
 	            </tr>
-				<c:forEach var="jg" items="${listaJogos}">       
+				<c:forEach items="${listaJogos }" var="jg">       
 		            <tr>
 		                <td>${jg.tA}</td>
-		            	<td>${jg.GolsTimeA}</td>  
+		            	<td>${jg.golsTimeA}</td>  
 		            	<td> X </td>              
-		                <td>${jg.tB.NomeTime}</td> 
-		                <td>${jg.GolsTImeB}</td>
-		                <td>${jg.DataJogo}</td>
+		                <td>${jg.tB}</td> 
+		                <td>${jg.golsTImeB}</td>
+		                <td>${jg.dataJogo}</td>
 		            </tr>
 		       	</c:forEach> 
 			</table>
 		</c:if>
     </div>
-  -->
+
 </body>
 </html>

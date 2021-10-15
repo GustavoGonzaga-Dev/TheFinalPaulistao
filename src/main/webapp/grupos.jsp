@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -23,17 +24,18 @@
 		</div>
 
 		<div>
-			<table border = 1>
-				<tr >
-					<th colspan="4">Grupo A</th>
-				</tr>
-				<tr>	
-					<td>Corinthians</td>
-					<td>Botafogo-SP</td>
-					<td>Bragantino</td>
-					<td>Ferroviária</td>
-				</tr>
-			</table>
+			<c:if test="${not empty TimesA }">
+				<table border = 1>
+					<tr >
+						<th colspan="4">Grupo A</th>
+					</tr>
+				<c:forEach items="${TimesA }" var="t">
+					<tr>	
+						<td>${t.nomeTime1}</td>
+					</tr>
+				</c:forEach>	
+				</table>
+			</c:if>
 		</div>
 		
 		<br>

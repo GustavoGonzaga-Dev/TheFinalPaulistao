@@ -15,7 +15,7 @@ public class JogoDaoImpl implements IJogoDao {
 
 	private Connection c;
 
-	public Connection JogoDaoImpll () throws ClassNotFoundException, SQLException {
+	public Connection JogoDaoImpll() throws ClassNotFoundException, SQLException {
 		GenericDao gDao = new GenericDao();
 		c = gDao.getConnection();
 		return c;
@@ -90,9 +90,9 @@ public class JogoDaoImpl implements IJogoDao {
 		}
 		rs.close();
 		ps.close();
-		for(int i = 0; i < listaJogos.size();i++) {
+		/*for(int i = 0; i < listaJogos.size();i++) {
 			System.out.println(listaJogos.get(i));
-		}
+		}*/
 		return listaJogos;
 	}
 

@@ -40,7 +40,7 @@ public class JogoServlet extends HttpServlet {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			/*request.setAttribute("listaJogos", listaJogos);*/
+			request.setAttribute("listaJogos", listaJogos);
 			RequestDispatcher rd = request.getRequestDispatcher("rodadas.jsp");
             rd.forward(request, response);
 		}

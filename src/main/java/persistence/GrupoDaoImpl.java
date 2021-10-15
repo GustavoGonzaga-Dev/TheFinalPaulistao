@@ -48,7 +48,6 @@ public class GrupoDaoImpl implements IGrupoDao{
 		}
 		String sql = "SELECT codigotime1, codigotime2, codigotime3, codigotime4 FROM grupos WHERE nomegrupo = ?";
 		PreparedStatement ps = c.prepareStatement(sql);
-		//System.out.println("passou dessa merda de linha");
 
 		ps.setString(1, gp.getNomeGrupo());
 		ResultSet rs = ps.executeQuery();
