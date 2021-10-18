@@ -28,7 +28,7 @@ public class JogoDaoImpl implements IJogoDao {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		String sql = "{CALL sp_geraJogo(?,?,?,?,?)}";
+		String sql = "{CALL sp_geraJogo2(?,?,?,?,?)}";
 		CallableStatement cs = c.prepareCall(sql);
 		cs.setInt(1, jogo.getCodigoJogo());
 		cs.setInt(2, jogo.getCodigoTimeA());
