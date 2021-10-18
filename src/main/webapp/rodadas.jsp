@@ -24,21 +24,21 @@
     	<c:if test="${not empty listaJogos }">
 	        <table border = 1>
 	        	<tr>
+	                <th>Data</th>
 	            	<th>Primeiro time</th>
 					<th>Gols do primeiro time</th>            	
 	                <th>&nbsp;</th>
-	                <th>Segundo time</th>
 	                <th>Gols do segundo time</th>
-	                <th>Data</th>
+	                <th>Segundo time</th>
 	            </tr>
 				<c:forEach items="${listaJogos }" var="jg">       
 		            <tr>
+		                <td>${jg.dataJogo}</td>
 		                <td>${jg.tA}</td>
 		            	<td>${jg.golsTimeA}</td>  
 		            	<td> X </td>              
-		                <td>${jg.tB}</td> 
 		                <td>${jg.golsTImeB}</td>
-		                <td>${jg.dataJogo}</td>
+		                <td>${jg.tB}</td> 
 		            </tr>
 		       	</c:forEach> 
 			</table>
