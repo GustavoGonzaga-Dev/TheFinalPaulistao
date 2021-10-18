@@ -30,6 +30,7 @@
 	                <th>&nbsp;</th>
 	                <th>Gols do segundo time</th>
 	                <th>Segundo time</th>
+	                <th>Adicionar Gols</th>
 	            </tr>
 				<c:forEach items="${listaJogos }" var="jg">       
 		            <tr>
@@ -39,6 +40,7 @@
 		            	<td> X </td>              
 		                <td>${jg.golsTImeB}</td>
 		                <td>${jg.tB}</td> 
+		                <td><button name = "gol">+</button></td>
 		            </tr>
 		       	</c:forEach> 
 			</table>
