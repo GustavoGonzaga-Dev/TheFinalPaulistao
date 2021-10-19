@@ -16,7 +16,6 @@
 		<jsp:include page="menu.jsp"></jsp:include>			
 	</div>
 	
-
 	
 	<div class= "Container">
 		<div>
