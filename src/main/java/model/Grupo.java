@@ -97,6 +97,10 @@ public class Grupo {
                 ", CodigoTime4=" + CodigoTime4 +
                 '}';
     }
+    
+    public String toString2() {
+        return ""+ NomeTime1 + "\n"+NomeTime2 + "\n" + NomeTime3 + "\n" + NomeTime4;
+    }
 	
 }
 

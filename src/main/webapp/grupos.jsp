@@ -16,7 +16,12 @@
 		<jsp:include page="menu.jsp"></jsp:include>			
 	</div>
 	
-
+	
+	<div>
+		<form action="CarregaGrupoServlet" method ="post"> 
+	    	<input type="submit" value="Pesquisar" id="buscar_jogos" name="button"/>	
+		</form>
+	</div>
 	
 	<div class= "Container">
 		<div>
@@ -24,14 +29,17 @@
 		</div>
 
 		<div>
-			<c:if test="${not empty TimesA }">
+			<c:if test="${not empty gpA }">
 				<table border = 1>
 					<tr >
-						<th colspan="4">Grupo A</th>
+						<th>Grupo A</th>
 					</tr>
-				<c:forEach items="${TimesA }" var="t">
+				<c:forEach items="${gpA}" var="t">
 					<tr>	
-						<td>${t.nomeTime1}</td>
+						<td>${t}</td>
+						<td>${t}</td>
+						<td>${t}</td>
+						<td>${t}</td>
 					</tr>
 				</c:forEach>	
 				</table>
