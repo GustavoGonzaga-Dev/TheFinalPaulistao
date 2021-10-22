@@ -62,7 +62,7 @@ public class GrupoDaoImpl implements IGrupoDao{
 		///////////////////////////
 		String sqll = "SELECT nometime FROM times WHERE codigotime in(?, ?, ?, ?)";
 		PreparedStatement pss = c.prepareStatement(sqll);
-		//System.out.println("passou dessa merda de linha");
+		System.out.println("passou dessa merda de linha");
 
 		pss.setInt(1, gp.getCodigoTime1());
 		pss.setInt(2, gp.getCodigoTime2());
