@@ -4,32 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Classificação Geral</title>
-<style type="text/css">
-body{
-	margin:0;
-	padding:0;
-}
-
-.tabela{
-	position:absolute;
-	top:50%;
-	left:50%;
-	margin-top:-100px;
-    margin-left:-350px;
-}
-</style>
+<title>Tabelas de Classificação por Grupos</title>
 </head>
 <body>
 	<div>
 		<h1 align="center">Tabela de Classificação Geral</h1>
 		<jsp:include page="menu.jsp"></jsp:include>			
 	</div>
-	
-	<div class="botao">
-		<input type="submit" id="button" value="Atualizar Tabela">
-	</div>
-	
+
 	<div class="tabela">
 		<table border="1">
 			<tr>
@@ -55,6 +37,6 @@ body{
 				<td></td>			
 			</tr>
 		</table>
-	</div>
+	</div>	
 </body>
 </html>
