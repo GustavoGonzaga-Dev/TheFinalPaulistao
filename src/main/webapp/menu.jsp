@@ -10,6 +10,7 @@
 <body>
  	<nav>
  		<div class="menu">Menu</div>
+ 		<a href="classificacao.jsp">Classificação Geral</a>
    		<a href="rodadas.jsp">Rodadas</a>		
   		<a href="times.jsp">Times</a>		
  		<a href="grupos.jsp">Grupos</a>
