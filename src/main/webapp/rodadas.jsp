@@ -121,8 +121,9 @@ body{
 		<label for="modalExemplo"
 		class="fecharModal">X</label>
 		<div class="conteudo">
+		<h4>Marque quem ganhou o Jogo</h4>
 			<select id=escolhas>
-				<option value=""></option>
+				<option disabled>-- select an option --</option>
 				<option value="vtimeA">Vitoria Time A</option>
 				<option value="vtimeB">Vitoria Time B</option>
 				<option value="empate">Empate</option>
