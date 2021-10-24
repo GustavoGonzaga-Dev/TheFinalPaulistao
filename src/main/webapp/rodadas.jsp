@@ -92,7 +92,8 @@ body{
 	                <th>&nbsp;</th>
 	                <th>Gols do segundo time</th>
 	                <th>Segundo time</th>
-	                <th>Adicionar Gols</th>
+	                <th>Resultado da Partida</th>
+	                <th>Adicionar Resultado</th>
 	            </tr>
 				<c:forEach items="${listaJogos }" var="jg">       
 		        <tr>
@@ -102,8 +103,9 @@ body{
 		          	<td> X </td>              
 		            <td>${jg.golsTImeB}</td>
 		            <td>${jg.tB}</td> 
-		            <td>	<label for="modalExemplo"
-					class="AbrirModal">Abrir modal</label>
+		            <td></td>
+		            <td>
+		            <label for="modalExemplo" class="AbrirModal">Abrir modal</label>
 					</td>
 		        </tr>
 		       	</c:forEach> 
@@ -119,7 +121,13 @@ body{
 		<label for="modalExemplo"
 		class="fecharModal">X</label>
 		<div class="conteudo">
-			
+			<select id=escolhas>
+				<option value=""></option>
+				<option value="vtimeA">Vitoria Time A</option>
+				<option value="vtimeB">Vitoria Time B</option>
+				<option value="empate">Empate</option>
+			</select>
+			<input type="button" value="Adicionar">
 		</div>
 	</div>
 </body>
