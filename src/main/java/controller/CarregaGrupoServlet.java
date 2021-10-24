@@ -54,14 +54,32 @@ public class CarregaGrupoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		encherVariaveis();
-		ArrayList<String> t = new ArrayList<String>();
+		ArrayList<String> t1 = new ArrayList<String>();
 		System.out.println("ta chamando essa buceta");
-		t.add(gpA.getNomeTime1());
-		t.add(gpA.getNomeTime2());
-		t.add(gpA.getNomeTime3());
-		t.add(gpA.getNomeTime4());
+		t1.add(gpA.getNomeTime1());
+		t1.add(gpA.getNomeTime2());
+		t1.add(gpA.getNomeTime3());
+		t1.add(gpA.getNomeTime4());
+		ArrayList<String> t2 = new ArrayList<String>();
+		t2.add(gpB.getNomeTime1());
+		t2.add(gpB.getNomeTime2());
+		t2.add(gpB.getNomeTime3());
+		t2.add(gpB.getNomeTime4());
+		ArrayList<String> t3 = new ArrayList<String>();
+		t3.add(gpC.getNomeTime1());
+		t3.add(gpC.getNomeTime2());
+		t3.add(gpC.getNomeTime3());
+		t3.add(gpC.getNomeTime4());		
+		ArrayList<String> t4 = new ArrayList<String>();
+		t4.add(gpD.getNomeTime1());
+		t4.add(gpD.getNomeTime2());
+		t4.add(gpD.getNomeTime3());
+		t4.add(gpD.getNomeTime4());		
 		
-		request.setAttribute("gpA", gpA.toString2());
+		request.setAttribute("gpA", t1);
+		request.setAttribute("gpB", t2);
+		request.setAttribute("gpC", t3);
+		request.setAttribute("gpD", t4);		
 		RequestDispatcher rd = request.getRequestDispatcher("grupos.jsp");
         rd.forward(request, response);
 	}

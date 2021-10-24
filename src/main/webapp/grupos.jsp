@@ -7,7 +7,23 @@
 <meta charset="ISO-8859-1">
 <title>Menu Grupos</title>
 <link rel="stylesheet" href="Styles/grupoStyles.css">
+<style type="text/css">
+.container{
+	display:flex;
+	
+}
 
+.grupo{
+	padding-left:100px;
+	background-color:white;
+	flex:1;
+}
+
+.btnPesquisar{
+	padding:20px;
+}
+
+</style>
 </head>
 <body>
 	<div>
@@ -16,82 +32,82 @@
 		<jsp:include page="menu.jsp"></jsp:include>			
 	</div>
 	
-	
-	<div>
+	<div class="btnPesquisar">
 		<form action="CarregaGrupoServlet" method ="post"> 
 	    	<input type="submit" value="Pesquisar" id="buscar_jogos" name="button"/>	
 		</form>
 	</div>
 	
-	<div class= "Container">
-		<div>
-			<h2>TABELA DE GRUPOS</h2>
-		</div>
+	<div align="center">
+		<h2>TABELA DE GRUPOS</h2>
+	</div>
+	
+	<div class= "container">
 
-		<div>
+		<div class="grupo">
 			<c:if test="${not empty gpA }">
 				<table border = 1>
 					<tr >
 						<th>Grupo A</th>
 					</tr>
-				<c:forEach items="${gpA}" var="t">
+				<c:forEach items="${gpA}" var="t1">
 					<tr>	
-						<td>${t}</td>
-						<td>${t}</td>
-						<td>${t}</td>
-						<td>${t}</td>
+						<td>${t1}</td>
 					</tr>
 				</c:forEach>	
 				</table>
 			</c:if>
 		</div>
 		
-		<br>
 		
-		<div>
-			<table border = 1>
-				<tr>
-					<th colspan="4">Grupo B</th>
-				</tr>
-				<tr>	
-					<td>Santos</td>
-					<td>Guarani</td>
-					<td>Ituano</td>
-					<td>Mirassol</td>
-				</tr>
-			</table>
+		
+		<div class="grupo">
+			<c:if test="${not empty gpB }">
+				<table border = 1>
+					<tr >
+						<th>Grupo B</th>
+					</tr>
+				<c:forEach items="${gpB}" var="t2">
+					<tr>	
+						<td>${t2}</td>
+					</tr>
+				</c:forEach>	
+				</table>
+			</c:if>
 		</div>
 
-		<br>
+		
 
-		<div>
-			<table border = 1>
-				<tr>
-					<th colspan="4">Grupo C</th>
-				</tr>	
-				<tr>
-					<td>Palmeiras</td>
-					<td>Novorizontino</td>
-					<td>Oeste</td>
-					<td>Ponte Preta</td>
-				</tr>
-			</table>
+		<div class="grupo">
+			<c:if test="${not empty gpC }">
+				<table border = 1>
+					<tr >
+						<th>Grupo C</th>
+					</tr>
+				<c:forEach items="${gpC}" var="t3">
+					<tr>	
+						<td>${t3}</td>
+					</tr>
+				</c:forEach>	
+				</table>
+			</c:if>
 		</div>
+		
+		
 	
-		<br>
-	
-		<div>
-			<table border = 1>
-				<tr>
-					<th colspan="4">Grupo D</th>
-				</tr>
-				<tr>	
-					<td>São Paulo</td>
-					<td>Red Bull Brasil</td>
-					<td>São Bento</td>
-					<td>São Caetano</td>
-				</tr>
-			</table>
+		<div class="grupo">
+			<c:if test="${not empty gpD }">
+				<table border = 1>
+					<tr >
+						<th>Grupo D</th>
+					</tr>
+				<c:forEach items="${gpD}" var="t4">
+					<tr>	
+						<td>${t4}</td>
+					</tr>
+				</c:forEach>	
+				</table>
+			</c:if>
 		</div>
 		
     </div>

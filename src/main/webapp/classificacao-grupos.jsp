@@ -5,6 +5,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Tabelas de Classificação por Grupos</title>
+<style type="text/css">
+body{
+	margin:0;
+	padding:0;
+}
+
+.tabela{
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-100px;
+    margin-left:-400px;
+}
+</style>
 </head>
 <body>
 	<div>
