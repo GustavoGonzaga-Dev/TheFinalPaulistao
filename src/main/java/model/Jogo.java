@@ -11,8 +11,14 @@ public class Jogo {
     private int CodRodada;
 	private String tA;
     private String tB; 
+    private String Resultado;
     
-    
+	public String getResultado() {
+		return Resultado;
+	}
+	public void setResultado(String resultado) {
+		Resultado = resultado;
+	}
 	public String gettA() {
 		return tA;
 	}

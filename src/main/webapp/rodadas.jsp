@@ -83,10 +83,12 @@ body{
 	</div>
 
     <div>
+    
     	<c:if test="${not empty listaJogos }">
 	        <table border = 1>
 	        	<tr>
 	                <th>Data</th>
+	                <th>Codigo Jogo</th>
 	            	<th>Primeiro time</th>
 					<th>Gols do primeiro time</th>            	
 	                <th>&nbsp;</th>
@@ -95,22 +97,29 @@ body{
 	                <th>Resultado da Partida</th>
 	                <th>Adicionar Resultado</th>
 	            </tr>
+	            
 				<c:forEach items="${listaJogos }" var="jg">       
 		        <tr>
 		            <td>${jg.dataJogo}</td>
+		            <td>${jg.codigoJogo}</td>
 		            <td>${jg.tA}</td>
 		          	<td>${jg.golsTimeA}</td>  
 		          	<td> X </td>              
 		            <td>${jg.golsTImeB}</td>
 		            <td>${jg.tB}</td> 
-		            <td></td>
+		            <td>${jg.resultado}</td>
 		            <td>
-		            <label for="modalExemplo" class="AbrirModal">Abrir modal</label>
+		            <form action="jogo" method ="post"> 
+		            <input type="submit" value="Resultado" id="button" name="button">
+		            </form>
+		            <!--<label for="modalExemplo" class="AbrirModal">Abrir modal</label>-->
 					</td>
 		        </tr>
 		       	</c:forEach> 
+		       	
 			</table>
 		</c:if>
+		
     </div>
 	<br>
 
@@ -120,15 +129,17 @@ body{
 	<div class="modal1">
 		<label for="modalExemplo"
 		class="fecharModal">X</label>
-		<div class="conteudo">
+		<div class="conteudo" >
 		<h4>Marque quem ganhou o Jogo</h4>
-			<select id=escolhas>
+		<form action="jogo" method ="post">
+			<select id=escolhas name = "escolhas">
 				<option disabled>-- select an option --</option>
 				<option value="vtimeA">Vitoria Time A</option>
 				<option value="vtimeB">Vitoria Time B</option>
 				<option value="empate">Empate</option>
 			</select>
-			<input type="button" value="Adicionar">
+			
+		</form>
 		</div>
 	</div>
 </body>

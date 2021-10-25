@@ -43,6 +43,40 @@ public class JogoDaoImpl implements IJogoDao {
 		return saida;
 
 	}
+	
+	@Override
+	public String AtualizaJogos(Jogo jogo) throws SQLException {
+		try {
+			c = JogoDaoImpll();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		String sql = "{CALL sp_atuJogo(?)}";
+		CallableStatement cs = c.prepareCall(sql);
+		cs.setInt(1, jogo.getCodigoJogo());
+		cs.close();
+		String saida = "Chamou aqui";
+
+		return saida;
+
+	}
+	
+	
+	@Override
+	public String BuscaResultadoJogos(int codigo) throws SQLException {
+		try {
+			c = JogoDaoImpll();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		String sql = "SELECT Resultado FROM jogos WHERE CodigoJogo LIKE ?";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, codigo);
+		ResultSet rs = ps.executeQuery();
+		
+		return rs.getString("Resultado");
+
+	}
 
 	@Override
 	public boolean validaRodada(Jogo jogo) throws SQLException {
@@ -86,6 +120,7 @@ public class JogoDaoImpl implements IJogoDao {
 			jogo.setGolsTImeB(rs.getInt("GolsTimeB"));
 			jogo.setDataJogo(rs.getString("DataJogo"));
 			jogo.setCodRodada(rs.getInt("CodRodada"));
+			jogo.setResultado("Sem Resultado");
 			listaJogos.add(jogo);
 		}
 		rs.close();

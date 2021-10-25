@@ -68,6 +68,7 @@ public class GerarServlet extends HttpServlet {
 	public void InserirJogosNaTabela(Jogo jogo) {
 		try {
 			ijg.insereJogos(jogo);
+			ijg.AtualizaJogos(jogo);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

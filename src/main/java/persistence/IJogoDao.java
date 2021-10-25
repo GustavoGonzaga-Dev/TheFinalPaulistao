@@ -9,4 +9,6 @@ public interface IJogoDao {
 	public String insereJogos(Jogo jogo) throws SQLException;
 	public boolean validaRodada(Jogo jogo) throws SQLException;
 	public List<Jogo> encontrarJogos(String datajg) throws SQLException;
+	public String AtualizaJogos(Jogo jogo )throws SQLException;
+	public String BuscaResultadoJogos(int codigo) throws SQLException;
 }
