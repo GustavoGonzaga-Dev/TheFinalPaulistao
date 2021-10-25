@@ -11,4 +11,5 @@ public interface IJogoDao {
 	public List<Jogo> encontrarJogos(String datajg) throws SQLException;
 	public String AtualizaJogos(Jogo jogo )throws SQLException;
 	public String BuscaResultadoJogos(int codigo) throws SQLException;
+	public String ClassGeral() throws SQLException ;
 }

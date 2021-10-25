@@ -130,5 +130,20 @@ public class JogoDaoImpl implements IJogoDao {
 		}*/
 		return listaJogos;
 	}
+	
+	@Override
+	public String ClassGeral() throws SQLException {
+		try {
+			c = JogoDaoImpll();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		String sql = "SELECT * FROM dbo.fn_ClassificacaoGeral() AS table";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		System.out.println(rs.getString("table"));
+		return rs.getString("table");
+
+	}
 
 }
